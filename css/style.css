@@ -1,0 +1,22 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.3s ease;
+  }
+  
+  /* Animation */
+  .fade-in {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Hover button effect */
+  button:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
+  }
+  
