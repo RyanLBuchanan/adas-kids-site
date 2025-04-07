@@ -28,14 +28,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   //   document.getElementById("ada-response").innerText = reply;
   // }
   
-  // const form = document.getElementById("ask-form");
-  // if (form) {
-  //   form.addEventListener("submit", (e) => {
-  //     e.preventDefault();
-  //     const question = document.getElementById("user-input").value;
-  //     askAda(question);
-  //   });
-  // }
+  const form = document.getElementById("ask-form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const question = document.getElementById("user-input").value;
+      askAda(question);
+    });
+  }
 
   // Ada chatbot interaction
   async function sendMessageToAda() {
