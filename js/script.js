@@ -1,49 +1,28 @@
-// Smooth scrolling for internal links
+// 🌟 Smooth scrolling for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   });
-  
-  // // Ada chatbot interaction
-  // async function askAda(message) {
-  //   const response = await fetch("https://api.openai.com/v1/chat/completions", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "Authorization": "Bearer YOUR_API_KEY_HERE"
-  //     },
-  //     body: JSON.stringify({
-  //       model: "gpt-3.5-turbo",
-  //       messages: [{ role: "user", content: message }]
-  //     })
-  //   });
-  
-  //   const data = await response.json();
-  //   const reply = data.choices[0].message.content;
-  //   document.getElementById("ada-response").innerText = reply;
-  // }
-  
-  const form = document.getElementById("ask-form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const question = document.getElementById("user-input").value;
-      askAda(question);
-    });
-  }
+});
 
-  // Ada chatbot interaction
-  async function sendMessageToAda() {
-    const message = document.getElementById("userMessage").value;
-    const responseBox = document.getElementById("adaResponse");
-  
-    responseBox.innerHTML = "⏳ Thinking...";
-  
+// 💬 Ada chatbot interaction
+const form = document.getElementById("ask-form");
+const userInput = document.getElementById("user-input");
+const chatLog = document.getElementById("chat-log");
+
+if (form && userInput && chatLog) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    appendMessage("You", message);
+    userInput.value = "";
+
     try {
       const response = await fetch("/.netlify/functions/chat-ada", {
         method: "POST",
@@ -52,18 +31,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         },
         body: JSON.stringify({ message }),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
-        responseBox.innerHTML = `<strong>Ada:</strong> ${data.reply}`;
+        appendMessage("Ada", data.reply);
       } else {
-        responseBox.innerHTML = `<span class="text-red-500">⚠️ Error: ${data.error.message || "Something went wrong."}</span>`;
+        appendMessage("Ada", `⚠️ Error: ${data.error?.message || "Something went wrong."}`);
       }
     } catch (err) {
-      responseBox.innerHTML = `<span class="text-red-500">❌ Network error. Please try again later.</span>`;
+      appendMessage("Ada", "❌ Network error. Please try again later.");
     }
-  }
-  
+  });
+}
 
-  
+// 🧠 Helper to show messages in chat log
+function appendMessage(sender, message) {
+  const messageEl = document.createElement("div");
+  messageEl.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatLog.appendChild(messageEl);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
