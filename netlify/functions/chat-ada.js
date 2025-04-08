@@ -24,11 +24,16 @@ exports.handler = async (event) => {
       body: JSON.stringify({ reply }),
     };
   } catch (error) {
-    console.error("OpenAI API Error:", error);
-
+    console.error("🔥 ERROR in chat-ada:", error);
+  
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message || "Something went wrong" }),
+      body: JSON.stringify({
+        error: {
+          message: error.message,
+          stack: error.stack,
+        },
+      }),
     };
   }
-};
+}
