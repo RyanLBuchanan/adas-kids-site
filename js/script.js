@@ -1,15 +1,3 @@
-// 🌟 Smooth scrolling for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
-
-// 💬 Ada chatbot interaction
 const form = document.getElementById("ask-form");
 const userInput = document.getElementById("user-input");
 const chatLog = document.getElementById("chat-log");
@@ -45,7 +33,6 @@ if (form && userInput && chatLog) {
   });
 }
 
-// 🧠 Helper to show messages in chat log
 function appendMessage(sender, message) {
   const messageEl = document.createElement("div");
   messageEl.innerHTML = `<strong>${sender}:</strong> ${message}`;
