@@ -1,2 +1,4 @@
 [build]
+  publish = "./"       # your static files like index.html live here
   functions = "netlify/functions"
+  command = ""         # <== important! no build command for plain HTML
