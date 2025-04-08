@@ -1,0 +1,23 @@
+{
+  "name": "adas-kids-site",
+  "version": "1.0.0",
+  "description": "**Ada’s Kids** is an upcoming project focused on making kids *really* happy about learning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanLBuchanan/adas-kids-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanLBuchanan/adas-kids-site/issues"
+  },
+  "homepage": "https://github.com/RyanLBuchanan/adas-kids-site#readme",
+  "dependencies": {
+    "openai": "^4.92.1"
+  }
+}
