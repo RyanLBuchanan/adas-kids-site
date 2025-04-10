@@ -1,4 +1,4 @@
-// Netlify Functions
+// Netlify Functions - for Deployment to adaskids.ai
 const { OpenAI } = require("openai");
 
 const openai = new OpenAI({
