@@ -19,4 +19,10 @@ body {
     transform: scale(1.03);
     transition: transform 0.2s ease;
   }
+
+  /* In css/style.css or a <style> block */
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.5));
+}
+
   
