@@ -39,3 +39,6 @@ function appendMessage(sender, message) {
   chatLog.appendChild(messageEl);
   chatLog.scrollTop = chatLog.scrollHeight;
 }
+
+
+
