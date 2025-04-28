@@ -25,4 +25,8 @@ body {
   filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.5));
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
   
