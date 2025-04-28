@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Google Font for Ada's Kids -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body class="bg-gradient-to-br from-yellow-100 via-pink-100 to-pink-200 text-gray-800">
   <!-- Navigation Bar -->
@@ -34,7 +35,7 @@
 
   <main class="pt-24">
     <!-- Home Section -->
-    <section id="home" class="text-center py-24 px-4">
+    <section id="home" class="text-center py-24 px-4" data-aos="fade-up" data-aos-duration="800">
       <h2 class="text-4xl font-bold mb-4">Welcome to Ada's Kids</h2>
       <p class="text-lg max-w-2xl mx-auto">We believe in making kids happy—<strong>really happy</strong>—about learning. Ada is your future learning companion: joyful, intuitive, and AI-powered.</p>
       <div class="mt-10">
@@ -53,7 +54,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="bg-white bg-opacity-70 py-20 px-4">
+    <section id="about" class="bg-white bg-opacity-70 py-20 px-4" data-aos="fade-up" data-aos-duration="800">
       <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-3xl font-semibold mb-4">About Us</h3>
         <p>Inspired by Ada Lovelace, we blend the spirit of discovery with the power of modern AI. Our mission is to make learning feel like play, and to help children fall in love with learning for its own sake.</p>
@@ -61,7 +62,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4">
+    <section id="projects" class="py-20 px-4" data-aos="fade-up" data-aos-duration="800">
       <div class="max-w-4xl mx-auto">
         <h3 class="text-3xl font-semibold text-center mb-8">Our Projects</h3>
         <ul class="space-y-6">
@@ -78,7 +79,7 @@
     </section>
 
  <!-- AI Chat Demo Section OpenAI API -->
-<section id="chat" class="bg-white bg-opacity-90 py-20 px-4">
+<section id="chat" class="bg-white bg-opacity-90 py-20 px-4" data-aos="fade-up" data-aos-duration="800">
   <div class="max-w-2xl mx-auto text-center">
     <h3 class="text-2xl font-bold mb-4">💬 Chat with Ada</h3>
     <p class="mb-6">Ask Ada anything about learning, curiosity, or the future of joyful education!</p>
@@ -110,7 +111,7 @@
     
 
     <!-- Consulting Section -->
-    <section id="consulting" class="bg-white bg-opacity-90 py-20 px-4">
+    <section id="consulting" class="bg-white bg-opacity-90 py-20 px-4" data-aos="fade-up" data-aos-duration="800">
       <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-3xl font-semibold mb-4">Prompt Engineering Consulting</h3>
         <p class="mb-6">Need help building effective AI interactions? Ryan Buchanan offers expert consulting in prompt engineering, conversational AI design, and EdTech applications of large language models. Whether you're building a product or refining your AI voice, we can help.</p>
@@ -133,7 +134,6 @@
             <li>A Master of Business Administration</li>
           </ul>
           <p class="mb-4">I’m currently pursuing a <strong>Bachelor of Science in Computer Science</strong> to deepen my technical foundation and better integrate with emerging AI systems.</p>
-          <p class="mb-4">I'm also a proud member of the <strong>faculty at Western Governors University</strong>, serving as a program mentor in the College of Computer Science.</p>
           <p class="mb-4">My current focus is on <strong>prompt engineering and AI literacy</strong> — helping individuals, startups, and educators harness the power of large language models for more intuitive, creative, and effective digital interactions.</p>
           <p>📬 Contact me: <a href="mailto:ryan@adaskids.ai" class="text-pink-600 font-semibold hover:underline">ryan@adaskids.ai</a></p>
         </div>
@@ -144,6 +144,10 @@
   <footer class="bg-white bg-opacity-70 text-center py-6 text-sm text-gray-600">
     <p>&copy; 2025 Ada's Kids. Made with love and imagination.</p>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>
