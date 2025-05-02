@@ -10,6 +10,9 @@
   <!-- Google Font for Ada's Kids -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- ✨ AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
 </head>
 <body class="bg-gradient-to-br from-yellow-100 via-pink-100 to-pink-200 text-gray-800">
@@ -55,32 +58,32 @@
       </div>
     </section>
 
-    <!-- 🎬 Demo Storyboard Section -->
+   <!-- 🎬 Demo Storyboard Section -->
 <section id="demo-preview" class="text-center my-20 px-4">
 
   <!-- Section Heading -->
-  <h2 class="text-3xl font-bold text-gray-800 mb-4">Demo Coming Soon</h2>
-  <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-10">
+  <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Demo Coming Soon</h2>
+  <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
     Follow the journey of a young learner discovering the joy of knowledge with Ada’s Kids.
   </p>
 
-  <!-- 🖼️ Storyboard Image Grid -->
+  <!-- 🖼️ Storyboard Grid -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
     <!-- 📖 Scene 1 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in-up" data-aos-delay="200">
       <img src="/assets/storyboard/scene1.png" alt="Scene 1: Curiosity Ignites" class="w-full">
       <p class="mt-2 text-sm text-gray-600">Curiosity Ignites</p>
     </div>
 
     <!-- 🤩 Scene 2 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in-up" data-aos-delay="300">
       <img src="/assets/storyboard/scene2.png" alt="Scene 2: Learning With Joy" class="w-full">
       <p class="mt-2 text-sm text-gray-600">Learning With Joy</p>
     </div>
 
     <!-- 🌟 Scene 3 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in-up" data-aos-delay="400">
       <img src="/assets/storyboard/scene3.png" alt="Scene 3: Confidence Unlocked" class="w-full">
       <p class="mt-2 text-sm text-gray-600">Confidence Unlocked</p>
     </div>
@@ -88,12 +91,13 @@
   </div>
 
   <!-- 🔔 Demo CTA Button -->
-  <div class="mt-12">
-    <a href="#" class="inline-block bg-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-300">
+  <div class="mt-12" data-aos="fade-up" data-aos-delay="600">
+    <a href="#" class="inline-block bg-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 hover:shadow-yellow-300 transition-all duration-300">
       Watch the Full Demo Soon
     </a>
   </div>
 </section>
+
 
 
     <!-- About Section -->
@@ -252,5 +256,11 @@
   AOS.init();
   </script>
   <script src="js/script.js"></script>
+  <!-- ✨ AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 </body>
 </html>
