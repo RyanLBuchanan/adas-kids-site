@@ -17,8 +17,10 @@ body {
   /* Hover button effect */
   button:hover {
     transform: scale(1.03);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* ✨ golden glow */
   }
+  
 
   /* In css/style.css or a <style> block */
 .drop-shadow-glow {
