@@ -1,266 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ada's Kids</title>
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Google Font for Ada's Kids -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- ✨ AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-
-</head>
-<body class="bg-gradient-to-br from-yellow-100 via-pink-100 to-pink-200 text-gray-800">
-  <!-- Navigation Bar -->
-  <header class="bg-white bg-opacity-80 shadow-md fixed top-0 w-full z-50">
-    <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3 group transition duration-300 ease-in-out">
-        <img src="assets/adas-kids-logo.png" alt="Ada's Kids Logo"
-             class="h-10 w-10 transform group-hover:scale-110 group-hover:drop-shadow-glow transition duration-300 ease-in-out" />
-        <h1 class="text-2xl font-extrabold text-gray-800 group-hover:text-pink-500 transition duration-300 ease-in-out">
-          Ada's Kids
-        </h1>
-      </div>      
-      <div class="space-x-4">
-        <a href="#home" class="hover:underline">Home</a>
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#testimonials" class="hover:text-yellow-500 transition-colors">Testimonials</a>
-        <a href="#vision" class="hover:underline">Hear Our Vision</a>
-        <a href="#projects" class="hover:underline">Projects</a>
-        <a href="#consulting" class="hover:underline">Consulting</a>
-      </div>
-    </nav>
-  </header>
-  
-
-  <main class="pt-24">
-    <!-- Home Section -->
-    <section id="home" class="text-center py-24 px-4" data-aos="fade-up" data-aos-duration="800">
-      <h2 class="text-4xl font-bold mb-4">Welcome to Ada's Kids</h2>
-      <p class="text-lg max-w-2xl mx-auto">We believe in making kids happy—<strong>really happy</strong>—about learning. Ada is your future learning companion: joyful, intuitive, and AI-powered.</p>
-      <div class="mt-10">
-        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md max-w-xl mx-auto mb-8">
-          <h3 class="text-xl font-semibold mb-2">🎥 Demo Coming Soon</h3>
-          <p class="text-gray-700">We'll be recording a short preview of Ada in action. Stay tuned!</p>
-        </div>
-        <div class="overflow-hidden rounded-xl shadow-md border border-gray-300 max-w-xl mx-auto">
-          <h3 class="text-xl font-bold text-center text-pink-600 mb-4">✨ Stay in the Loop</h3>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd6v2WiTEtaXBpbWyYTTzuP0B-mBRTVF5IC2fpsk5tZqi_U6Q/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" class="w-full h-[600px]">
-            Loading…
-          </iframe>
-        </div>
-        
-      </div>
-    </section>
-
-   <!-- 🎬 Demo Storyboard Section -->
-<section id="demo-preview" class="text-center my-20 px-4">
-
-  <!-- Section Heading -->
-  <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Demo Coming Soon</h2>
-  <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
-    Follow the journey of a young learner discovering the joy of knowledge with Ada’s Kids.
-  </p>
-
-  <!-- 🖼️ Storyboard Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-    <!-- 📖 Scene 1 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in-up" data-aos-delay="200">
-      <img src="/assets/storyboard/scene1.png" alt="Scene 1: Curiosity Ignites" class="w-full">
-      <p class="mt-2 text-sm text-gray-600">Curiosity Ignites</p>
-    </div>
-
-    <!-- 🤩 Scene 2 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in-up" data-aos-delay="300">
-      <img src="/assets/storyboard/scene2.png" alt="Scene 2: Learning With Joy" class="w-full">
-      <p class="mt-2 text-sm text-gray-600">Learning With Joy</p>
-    </div>
-
-    <!-- 🌟 Scene 3 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in-up" data-aos-delay="400">
-      <img src="/assets/storyboard/scene3.png" alt="Scene 3: Confidence Unlocked" class="w-full">
-      <p class="mt-2 text-sm text-gray-600">Confidence Unlocked</p>
-    </div>
-
-  </div>
-
-  <!-- 🔔 Demo CTA Button -->
-  <div class="mt-12" data-aos="fade-up" data-aos-delay="600">
-    <a href="#" class="inline-block bg-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 hover:shadow-yellow-300 transition-all duration-300">
-      Watch the Full Demo Soon
-    </a>
-  </div>
-</section>
-
-
-
-    <!-- About Section -->
-    <section id="about" class="bg-white bg-opacity-70 py-20 px-4" data-aos="fade-up" data-aos-duration="800">
-      <div class="max-w-3xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-4">About Us</h3>
-        <p>Inspired by Ada Lovelace, we blend the spirit of discovery with the power of modern AI. Our mission is to make learning feel like play, and to help children fall in love with learning for its own sake.</p>
-      </div>
-    </section>
-
-  <!-- Testimonials Carousel -->
-  <section id="testimonials" class="text-center my-16">
-    <h2 class="text-3xl font-bold text-gray-800 mb-4">What Parents and Students Are Saying</h2>
-    <p class="text-gray-500 text-lg max-w-xl mx-auto mb-10">
-      Real voices, real impact—see how Ada’s Kids is transforming the way children experience learning.
-    </p>
-  
-    <!-- Carousel wrapper -->
-    <div id="testimonial-carousel" class="relative overflow-hidden max-w-xl mx-auto">
-      <div class="carousel-track flex transition-transform duration-700 w-full">
-        <!-- Slide 1 -->
-        <div class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow">
-          <img src="/assets/images/testimonial1.png" alt="Happy Parent" class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4">
-          <p class="italic text-gray-800 mb-2">“Ada’s Kids helped my daughter fall in love with learning again. It’s like she has her own magical AI tutor!”</p>
-          <p class="text-sm font-semibold text-gray-500">— A Happy Parent</p>
-        </div>
-  
-        <!-- Slide 2 -->
-        <div class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow">
-          <img src="/assets/images/testimonial2.png" alt="Young Student" class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4">
-          <p class="italic text-gray-800 mb-2">“I used to get bored with school, but now I look forward to learning every day!”</p>
-          <p class="text-sm font-semibold text-gray-500">— A Young Learner</p>
-        </div>
-  
-        <!-- Slide 3 -->
-        <div class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow">
-          <img src="/assets/images/testimonial3.png" alt="Grateful Student" class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4">
-          <p class="italic text-gray-800 mb-2">“Ada’s Kids is so much fun. I’m always excited to learn something new!”</p>
-          <p class="text-sm font-semibold text-gray-500">— A Grateful Student</p>
-        </div>
-      </div>
-  
-      <!-- Navigation -->
-      <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 text-2xl">←</button>
-      <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 text-2xl">→</button>
-    </div>
-  </section>
-  
-       
-
-    <!-- Vision Section: Thumbnail + Audio -->
-    <section id="vision" class="py-20 px-4 bg-white bg-opacity-80" data-aos="fade-up" data-aos-duration="800">
-      <div class="max-w-4xl mx-auto text-center">
-        <img src="assets/AdasKids-Branding.png" alt="Children learning joyfully with AI mentors - Ada's Kids" class="rounded-2xl shadow-lg mx-auto mb-8 max-w-sm">
-        
-        <h3 class="text-3xl font-semibold mb-4">Hear Our Vision 🎧</h3>
-
-        <audio controls class="mx-auto mb-6">
-          <source src="audio/adaskids_description.wav" type="audio/wav">
-          Your browser does not support the audio element.
-        </audio>
-
-        <p class="text-lg text-gray-700">Ada’s Kids is building a future where every child has a mentor for life — nurturing curiosity, confidence, and career discovery through personalized AI companions. 🌱</p>
-      </div>
-    </section>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4" data-aos="fade-up" data-aos-duration="800">
-      <div class="max-w-4xl mx-auto">
-        <h3 class="text-3xl font-semibold text-center mb-8">Our Projects</h3>
-        <ul class="space-y-6">
-          <li class="bg-white bg-opacity-80 p-6 rounded-xl shadow-md">
-            <h4 class="text-xl font-bold mb-2">Ada's Learning Agent</h4>
-            <p>An AI-powered tutor designed to engage children in joyful, curiosity-driven learning experiences across subjects.</p>
-          </li>
-          <li class="bg-white bg-opacity-80 p-6 rounded-xl shadow-md">
-            <h4 class="text-xl font-bold mb-2">Bootstrap the Kitten</h4>
-            <p>A whimsical character designed to explore learning alongside Ada—cute, curious, and always ready to pounce on knowledge.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
- <!-- AI Chat Demo Section OpenAI API -->
-<section id="chat" class="bg-white bg-opacity-90 py-20 px-4" data-aos="fade-up" data-aos-duration="800">
-  <div class="max-w-2xl mx-auto text-center">
-    <h3 class="text-2xl font-bold mb-4">💬 Chat with Ada</h3>
-    <p class="mb-6">Ask Ada anything about learning, curiosity, or the future of joyful education!</p>
-
-    <form id="ask-form" class="space-y-4">
-      <div id="chat-log" class="h-64 overflow-y-auto bg-white p-4 rounded shadow-inner text-left"></div>
-
-      <div class="flex space-x-2">
-        <input
-          type="text"
-          id="user-input"
-          placeholder="Ask Ada anything..."
-          class="flex-1 p-3 rounded-lg border border-gray-300"
-          required
-        />
-        <button
-          type="submit"
-          id="send-btn"
-          class="bg-pink-500 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-pink-600"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ada's Kids</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google Font for Ada's Kids -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- ✨ AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-yellow-100 via-pink-100 to-pink-200 text-gray-800"
+  >
+    <!-- Navigation Bar -->
+    <header class="bg-white bg-opacity-80 shadow-md fixed top-0 w-full z-50">
+      <nav
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div
+          class="flex items-center space-x-3 group transition duration-300 ease-in-out"
         >
-          Send
-        </button>
-      </div>
-    </form>
-  </div>
-</section>
-
-
-    
-
-    <!-- Consulting Section -->
-    <section id="consulting" class="bg-white bg-opacity-90 py-20 px-4" data-aos="fade-up" data-aos-duration="800">
-      <div class="max-w-3xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-4">Prompt Engineering Consulting</h3>
-        <p class="mb-6">Need help building effective AI interactions? Ryan Buchanan offers expert consulting in prompt engineering, conversational AI design, and EdTech applications of large language models. Whether you're building a product or refining your AI voice, we can help.</p>
-        <p class="mb-2 font-medium">Services include:</p>
-        <ul class="text-left list-disc list-inside mb-6">
-          <li>Prompt tuning and LLM optimization</li>
-          <li>Use case design and workflow strategy</li>
-          <li>Educational prompt frameworks for learners</li>
-          <li>Voice and personality design for AI agents</li>
-        </ul>
-        <div class="text-left bg-pink-50 p-6 rounded-xl shadow-inner">
-          <h4 class="text-xl font-bold mb-2">About Me</h4>
-          <img src="assets/headshot-happy.jpg" alt="Ryan Buchanan" class="w-45 h-40 rounded-full mx-auto mb-4 border-4 border-pink-200 shadow-md">
-          <p class="mb-4">Hi, I’m Ryan — a lifelong educator, AI enthusiast, and passionate believer in joyful learning.</p>
-          <p class="mb-4">I bring over <strong>15 years of experience as a teacher and instructional designer</strong>, having worked internationally in roles ranging from English instructor at a Chinese medical university to tech mentor at a Fortune 500 defense contractor. I’ve also founded and run an EdTech company focused on immersive learning for children.</p>
-          <p class="mb-4">I hold <strong>three master’s degrees</strong>, including:</p>
-          <ul class="list-disc list-inside mb-4">
-            <li>A Master of Education (M.Ed.)</li>
-            <li>A Master’s in Data Analytics</li>
-            <li>A Master of Business Administration</li>
-          </ul>
-          <p class="mb-4">I’m currently pursuing a <strong>Bachelor of Science in Computer Science</strong> to deepen my technical foundation and better integrate with emerging AI systems.</p>
-          <p class="mb-4">My current focus is on <strong>prompt engineering and AI literacy</strong> — helping individuals, startups, and educators harness the power of large language models for more intuitive, creative, and effective digital interactions.</p>
-          <p>📬 Contact me: <a href="mailto:ryan@adaskids.ai" class="text-pink-600 font-semibold hover:underline">ryan@adaskids.ai</a></p>
+          <img
+            src="assets/adas-kids-logo.png"
+            alt="Ada's Kids Logo"
+            class="h-10 w-10 transform group-hover:scale-110 group-hover:drop-shadow-glow transition duration-300 ease-in-out"
+          />
+          <h1
+            class="text-2xl font-extrabold text-gray-800 group-hover:text-pink-500 transition duration-300 ease-in-out"
+          >
+            Ada's Kids
+          </h1>
         </div>
-      </div>
-    </section>
-  </main>
+        <div class="space-x-4">
+          <a href="#home" class="hover:underline">Home</a>
+          <a href="#about" class="hover:underline">About</a>
+          <a
+            href="#testimonials"
+            class="hover:text-yellow-500 transition-colors"
+            >Testimonials</a
+          >
+          <a href="#vision" class="hover:underline">Hear Our Vision</a>
+          <a href="#projects" class="hover:underline">Projects</a>
+          <a href="#consulting" class="hover:underline">Consulting</a>
+        </div>
+      </nav>
+    </header>
 
-  <footer class="bg-white bg-opacity-70 text-center py-6 text-sm text-gray-600 space-y-2">
-    <p>&copy; 2025 Ada's Kids. Made with love and imagination.</p>
-    <p class="italic text-gray-500">
-      “Every child deserves a teacher who never gets tired of their questions.”
-    </p>
-  </footer>  
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-  AOS.init();
-  </script>
-  <script src="js/script.js"></script>
-  <!-- ✨ AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <main class="pt-24">
+      <!-- 🏠 Home Section -->
+      <section
+        id="home"
+        class="text-center py-24 px-4"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h2 class="text-4xl font-bold mb-4">Welcome to Ada's Kids</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+          We believe in making kids happy—<strong>really happy</strong>—about
+          learning. Ada is your future learning companion: joyful, intuitive,
+          and AI-powered.
+        </p>
 
-</body>
+        <div class="mt-10">
+          <!-- 📽️ Demo Notice Box -->
+          <div
+            class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md max-w-xl mx-auto mb-8"
+          >
+            <h3 class="text-xl font-semibold mb-2">🎥 Demo Coming Soon</h3>
+            <p class="text-gray-700">
+              We'll be recording a short preview of Ada in action. Stay tuned!
+            </p>
+          </div>
+
+          <!-- ✨ Stay in the Loop (Google Form) -->
+          <div
+            class="overflow-hidden rounded-xl shadow-md border border-gray-300 max-w-xl mx-auto"
+          >
+            <h3 class="text-xl font-bold text-center text-pink-600 mb-4">
+              ✨ Stay in the Loop
+            </h3>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSd6v2WiTEtaXBpbWyYTTzuP0B-mBRTVF5IC2fpsk5tZqi_U6Q/viewform?embedded=true"
+              width="100%"
+              height="600"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              class="w-full h-[600px]"
+            >
+              Loading…
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🎬 Demo Storyboard Section -->
+      <section id="demo-preview" class="text-center my-20 px-4">
+        <!-- Section Heading -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">
+          Demo Coming Soon
+        </h2>
+        <p
+          class="text-gray-500 text-lg max-w-2xl mx-auto mb-10"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Follow the journey of a young learner discovering the joy of knowledge
+          with Ada’s Kids.
+        </p>
+
+        <!-- 🖼️ Storyboard Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- 📖 Scene 1 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105"
+            data-aos="zoom-in-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="/assets/storyboard/scene1.png"
+              alt="Scene 1: Curiosity Ignites"
+              class="w-full"
+            />
+            <p class="mt-2 text-sm text-gray-600">Curiosity Ignites</p>
+          </div>
+
+          <!-- 🤩 Scene 2 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105"
+            data-aos="zoom-in-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="/assets/storyboard/scene2.png"
+              alt="Scene 2: Learning With Joy"
+              class="w-full"
+            />
+            <p class="mt-2 text-sm text-gray-600">Learning With Joy</p>
+          </div>
+
+          <!-- 🌟 Scene 3 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105"
+            data-aos="zoom-in-up"
+            data-aos-delay="400"
+          >
+            <img
+              src="/assets/storyboard/scene3.png"
+              alt="Scene 3: Confidence Unlocked"
+              class="w-full"
+            />
+            <p class="mt-2 text-sm text-gray-600">Confidence Unlocked</p>
+          </div>
+        </div>
+
+        <!-- 🔔 Demo CTA Button -->
+        <div class="mt-12" data-aos="fade-up" data-aos-delay="600">
+          <a
+            href="#"
+            class="inline-block bg-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 hover:shadow-yellow-300 transition-all duration-300"
+          >
+            Watch the Full Demo Soon
+          </a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section
+        id="about"
+        class="bg-white bg-opacity-70 py-20 px-4"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <div class="max-w-3xl mx-auto text-center">
+          <h3 class="text-3xl font-semibold mb-4">About Us</h3>
+          <p>
+            Inspired by Ada Lovelace, we blend the spirit of discovery with the
+            power of modern AI. Our mission is to make learning feel like play,
+            and to help children fall in love with learning for its own sake.
+          </p>
+        </div>
+      </section>
+
+      <!-- Testimonials Carousel -->
+      <section id="testimonials" class="text-center my-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          What Parents and Students Are Saying
+        </h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto mb-10">
+          Real voices, real impact—see how Ada’s Kids is transforming the way
+          children experience learning.
+        </p>
+
+        <!-- Carousel wrapper -->
+        <div
+          id="testimonial-carousel"
+          class="relative overflow-hidden max-w-xl mx-auto"
+        >
+          <div
+            class="carousel-track flex transition-transform duration-700 w-full"
+          >
+            <!-- Slide 1 -->
+            <div
+              class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow"
+            >
+              <img
+                src="/assets/images/testimonial1.png"
+                alt="Happy Parent"
+                class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4"
+              />
+              <p class="italic text-gray-800 mb-2">
+                “Ada’s Kids helped my daughter fall in love with learning again.
+                It’s like she has her own magical AI tutor!”
+              </p>
+              <p class="text-sm font-semibold text-gray-500">
+                — A Happy Parent
+              </p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div
+              class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow"
+            >
+              <img
+                src="/assets/images/testimonial2.png"
+                alt="Young Student"
+                class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4"
+              />
+              <p class="italic text-gray-800 mb-2">
+                “I used to get bored with school, but now I look forward to
+                learning every day!”
+              </p>
+              <p class="text-sm font-semibold text-gray-500">
+                — A Young Learner
+              </p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div
+              class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow"
+            >
+              <img
+                src="/assets/images/testimonial3.png"
+                alt="Grateful Student"
+                class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4"
+              />
+              <p class="italic text-gray-800 mb-2">
+                “Ada’s Kids is so much fun. I’m always excited to learn
+                something new!”
+              </p>
+              <p class="text-sm font-semibold text-gray-500">
+                — A Grateful Student
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <button
+            id="prevBtn"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 text-2xl"
+          >
+            ←
+          </button>
+          <button
+            id="nextBtn"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 text-2xl"
+          >
+            →
+          </button>
+        </div>
+      </section>
+
+      <!-- Vision Section: Thumbnail + Audio -->
+      <section
+        id="vision"
+        class="py-20 px-4 bg-white bg-opacity-80"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <div class="max-w-4xl mx-auto text-center">
+          <img
+            src="assets/AdasKids-Branding.png"
+            alt="Children learning joyfully with AI mentors - Ada's Kids"
+            class="rounded-2xl shadow-lg mx-auto mb-8 max-w-sm"
+          />
+
+          <h3 class="text-3xl font-semibold mb-4">Hear Our Vision 🎧</h3>
+
+          <audio controls class="mx-auto mb-6">
+            <source src="audio/adaskids_description.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-lg text-gray-700">
+            Ada’s Kids is building a future where every child has a mentor for
+            life — nurturing curiosity, confidence, and career discovery through
+            personalized AI companions. 🌱
+          </p>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section
+        id="projects"
+        class="py-20 px-4"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <div class="max-w-4xl mx-auto">
+          <h3 class="text-3xl font-semibold text-center mb-8">Our Projects</h3>
+          <ul class="space-y-6">
+            <li class="bg-white bg-opacity-80 p-6 rounded-xl shadow-md">
+              <h4 class="text-xl font-bold mb-2">Ada's Learning Agent</h4>
+              <p>
+                An AI-powered tutor designed to engage children in joyful,
+                curiosity-driven learning experiences across subjects.
+              </p>
+            </li>
+            <li class="bg-white bg-opacity-80 p-6 rounded-xl shadow-md">
+              <h4 class="text-xl font-bold mb-2">Bootstrap the Kitten</h4>
+              <p>
+                A whimsical character designed to explore learning alongside
+                Ada—cute, curious, and always ready to pounce on knowledge.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- AI Chat Demo Section OpenAI API -->
+      <section
+        id="chat"
+        class="bg-white bg-opacity-90 py-20 px-4"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <div class="max-w-2xl mx-auto text-center">
+          <h3 class="text-2xl font-bold mb-4">💬 Chat with Ada</h3>
+          <p class="mb-6">
+            Ask Ada anything about learning, curiosity, or the future of joyful
+            education!
+          </p>
+
+          <form id="ask-form" class="space-y-4">
+            <div
+              id="chat-log"
+              class="h-64 overflow-y-auto bg-white p-4 rounded shadow-inner text-left"
+            ></div>
+
+            <div class="flex space-x-2">
+              <input
+                type="text"
+                id="user-input"
+                placeholder="Ask Ada anything..."
+                class="flex-1 p-3 rounded-lg border border-gray-300"
+                required
+              />
+              <button
+                type="submit"
+                id="send-btn"
+                class="bg-pink-500 text-white font-semibold px-6 py-2 rounded-lg shadow hover:bg-pink-600"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Consulting Section -->
+      <section
+        id="consulting"
+        class="bg-white bg-opacity-90 py-20 px-4"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <div class="max-w-3xl mx-auto text-center">
+          <h3 class="text-3xl font-semibold mb-4">
+            Prompt Engineering Consulting
+          </h3>
+          <p class="mb-6">
+            Need help building effective AI interactions? Ryan Buchanan offers
+            expert consulting in prompt engineering, conversational AI design,
+            and EdTech applications of large language models. Whether you're
+            building a product or refining your AI voice, we can help.
+          </p>
+          <p class="mb-2 font-medium">Services include:</p>
+          <ul class="text-left list-disc list-inside mb-6">
+            <li>Prompt tuning and LLM optimization</li>
+            <li>Use case design and workflow strategy</li>
+            <li>Educational prompt frameworks for learners</li>
+            <li>Voice and personality design for AI agents</li>
+          </ul>
+          <div class="text-left bg-pink-50 p-6 rounded-xl shadow-inner">
+            <h4 class="text-xl font-bold mb-2">About Me</h4>
+            <img
+              src="assets/headshot-happy.jpg"
+              alt="Ryan Buchanan"
+              class="w-45 h-40 rounded-full mx-auto mb-4 border-4 border-pink-200 shadow-md"
+            />
+            <p class="mb-4">
+              Hi, I’m Ryan — a lifelong educator, AI enthusiast, and passionate
+              believer in joyful learning.
+            </p>
+            <p class="mb-4">
+              I bring over
+              <strong
+                >15 years of experience as a teacher and instructional
+                designer</strong
+              >, having worked internationally in roles ranging from English
+              instructor at a Chinese medical university to tech mentor at a
+              Fortune 500 defense contractor. I’ve also founded and run an
+              EdTech company focused on immersive learning for children.
+            </p>
+            <p class="mb-4">
+              I hold <strong>three master’s degrees</strong>, including:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+              <li>A Master of Education (M.Ed.)</li>
+              <li>A Master’s in Data Analytics</li>
+              <li>A Master of Business Administration</li>
+            </ul>
+            <p class="mb-4">
+              I’m currently pursuing a
+              <strong>Bachelor of Science in Computer Science</strong> to deepen
+              my technical foundation and better integrate with emerging AI
+              systems.
+            </p>
+            <p class="mb-4">
+              My current focus is on
+              <strong>prompt engineering and AI literacy</strong> — helping
+              individuals, startups, and educators harness the power of large
+              language models for more intuitive, creative, and effective
+              digital interactions.
+            </p>
+            <p>
+              📬 Contact me:
+              <a
+                href="mailto:ryan@adaskids.ai"
+                class="text-pink-600 font-semibold hover:underline"
+                >ryan@adaskids.ai</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-white bg-opacity-70 text-center py-6 text-sm text-gray-600 space-y-2"
+    >
+      <p>&copy; 2025 Ada's Kids. Made with love and imagination.</p>
+      <p class="italic text-gray-500">
+        “Every child deserves a teacher who never gets tired of their
+        questions.”
+      </p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="js/script.js"></script>
+    <!-- ✨ AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
