@@ -35,6 +35,10 @@ html {
   scroll-behavior: smooth; /* Keep smooth scrolling too */
 }
 
+.testimonial-text {
+  color: #444; /* Or #333 for slightly darker */
+}
+
 
 
 
