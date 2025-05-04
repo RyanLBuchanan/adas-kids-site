@@ -24,34 +24,46 @@
   >
     <!-- Navigation Bar -->
     <header class="bg-white bg-opacity-80 shadow-md fixed top-0 w-full z-50">
-      <nav
-        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
-      >
+      <!-- 🌐 Responsive Navigation Bar -->
+      <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
         <div
-          class="flex items-center space-x-3 group transition duration-300 ease-in-out"
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
         >
-          <img
-            src="assets/adas-kids-logo.png"
-            alt="Ada's Kids Logo"
-            class="h-10 w-10 transform group-hover:scale-110 group-hover:drop-shadow-glow transition duration-300 ease-in-out"
-          />
-          <h1
-            class="text-2xl font-extrabold text-gray-800 group-hover:text-pink-500 transition duration-300 ease-in-out"
+          <!-- Logo -->
+          <a href="#" class="flex items-center space-x-2">
+            <img src="/assets/logo.png" alt="Ada's Kids Logo" class="h-8 w-8" />
+            <span class="font-bold text-lg">Ada's Kids</span>
+          </a>
+
+          <!-- 🍔 Hamburger Button (Mobile Only) -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-gray-700 focus:outline-none"
           >
-            Ada's Kids
-          </h1>
+            ☰
+          </button>
+
+          <!-- 🌍 Nav Links (Hidden on Mobile) -->
+          <div id="nav-links" class="hidden md:flex space-x-6">
+            <a href="#home" class="hover:text-yellow-500">Home</a>
+            <a href="#about" class="hover:text-yellow-500">About</a>
+            <a href="#testimonials" class="hover:text-yellow-500"
+              >Testimonials</a
+            >
+            <a href="#vision" class="hover:text-yellow-500">Hear Our Vision</a>
+            <a href="#projects" class="hover:text-yellow-500">Projects</a>
+            <a href="#consulting" class="hover:text-yellow-500">Consulting</a>
+          </div>
         </div>
-        <div class="space-x-4">
-          <a href="#home" class="hover:underline">Home</a>
-          <a href="#about" class="hover:underline">About</a>
-          <a
-            href="#testimonials"
-            class="hover:text-yellow-500 transition-colors"
-            >Testimonials</a
-          >
-          <a href="#vision" class="hover:underline">Hear Our Vision</a>
-          <a href="#projects" class="hover:underline">Projects</a>
-          <a href="#consulting" class="hover:underline">Consulting</a>
+
+        <!-- 📱 Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white">
+          <a href="#home" class="block py-2 border-b">Home</a>
+          <a href="#about" class="block py-2 border-b">About</a>
+          <a href="#testimonials" class="block py-2 border-b">Testimonials</a>
+          <a href="#vision" class="block py-2 border-b">Hear Our Vision</a>
+          <a href="#projects" class="block py-2 border-b">Projects</a>
+          <a href="#consulting" class="block py-2">Consulting</a>
         </div>
       </nav>
     </header>

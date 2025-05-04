@@ -25,7 +25,10 @@ if (form && userInput && chatLog) {
       if (response.ok) {
         appendMessage("Ada", data.reply);
       } else {
-        appendMessage("Ada", `⚠️ Error: ${data.error?.message || "Something went wrong."}`);
+        appendMessage(
+          "Ada",
+          `⚠️ Error: ${data.error?.message || "Something went wrong."}`
+        );
       }
     } catch (err) {
       appendMessage("Ada", "❌ Network error. Please try again later.");
@@ -40,8 +43,8 @@ function appendMessage(sender, message) {
   chatLog.scrollTop = chatLog.scrollHeight;
 }
 
-const track = document.querySelector('.carousel-track');
-const slides = document.querySelectorAll('.carousel-track > div');
+const track = document.querySelector(".carousel-track");
+const slides = document.querySelectorAll(".carousel-track > div");
 let currentIndex = 0;
 
 function updateCarousel() {
@@ -49,16 +52,24 @@ function updateCarousel() {
   track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
-document.getElementById('prevBtn').addEventListener('click', () => {
+document.getElementById("prevBtn").addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   updateCarousel();
 });
 
-document.getElementById('nextBtn').addEventListener('click', () => {
+document.getElementById("nextBtn").addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % slides.length;
   updateCarousel();
 });
 
+// 🍔 Mobile Menu Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
 
-
-
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
+});
