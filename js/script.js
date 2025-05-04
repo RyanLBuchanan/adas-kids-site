@@ -1,3 +1,6 @@
+// ✅ Animate on Scroll Init
+AOS.init();
+
 const form = document.getElementById("ask-form");
 const userInput = document.getElementById("user-input");
 const chatLog = document.getElementById("chat-log");
