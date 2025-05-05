@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talk to Prima</title>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styling for Prima Chat -->
+    <link rel="stylesheet" href="css/play.css" />
+
+    <!-- Google Font for Cheerful Feel -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-br from-yellow-50 via-pink-50 to-pink-100 font-sans text-gray-800"
+  >
+    <!-- Header -->
+    <header class="text-center py-6 shadow bg-white bg-opacity-70">
+      <h1 class="text-3xl font-bold">✨ Talk to Prima</h1>
+      <p class="text-sm text-gray-500">Your joyful AI tutor is here to chat!</p>
+    </header>
+
+    <!-- Chat Container -->
+    <main class="max-w-2xl mx-auto px-4 py-10">
+      <div
+        id="chat-log"
+        class="bg-white bg-opacity-80 rounded-xl shadow-inner h-96 overflow-y-auto p-4 mb-6"
+      >
+        <!-- Messages will be dynamically appended here -->
+      </div>
+
+      <!-- Chat Input Form -->
+      <form id="ask-form" class="flex space-x-2">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Ask me anything..."
+          class="flex-1 p-3 border border-gray-300 rounded-lg"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-pink-500 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-pink-600"
+        >
+          Send
+        </button>
+      </form>
+    </main>
+
+    <!-- Optional: Back to Home -->
+    <footer class="text-center py-4 text-sm text-gray-500">
+      <a href="/" class="underline hover:text-pink-600">← Back to Home</a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/play.js"></script>
+  </body>
+</html>
