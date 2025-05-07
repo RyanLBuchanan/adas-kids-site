@@ -17,6 +17,55 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
   <body class="text-gray-800">
+    <!-- Navigation Bar -->
+    <header class="bg-white bg-opacity-80 shadow-md fixed top-0 w-full z-50">
+      <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+        >
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center space-x-2">
+            <img src="assets/logo.png" alt="Ada's Kids Logo" class="h-8 w-8" />
+            <span class="font-bold text-lg">Ada's Kids</span>
+          </a>
+
+          <!-- Hamburger Button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-gray-700 focus:outline-none"
+          >
+            ☰
+          </button>
+
+          <!-- Desktop Links -->
+          <div id="nav-links" class="hidden md:flex space-x-6">
+            <a href="index.html#home" class="hover:text-yellow-500">Home</a>
+            <a href="index.html#about" class="hover:text-yellow-500">About</a>
+            <a href="index.html#testimonials" class="hover:text-yellow-500"
+              >Testimonials</a
+            >
+            <a href="index.html#projects" class="hover:text-yellow-500"
+              >Projects</a
+            >
+            <a href="demo.html" class="hover:text-yellow-500 font-semibold"
+              >Demo</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile Links -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white">
+          <a href="index.html#home" class="block py-2 border-b">Home</a>
+          <a href="index.html#about" class="block py-2 border-b">About</a>
+          <a href="index.html#testimonials" class="block py-2 border-b"
+            >Testimonials</a
+          >
+          <a href="index.html#projects" class="block py-2 border-b">Projects</a>
+          <a href="demo.html" class="block py-2">Demo</a>
+        </div>
+      </nav>
+    </header>
+
     <!-- Slide 1 -->
     <section
       class="min-h-screen flex flex-col justify-center items-center px-6 text-center"
