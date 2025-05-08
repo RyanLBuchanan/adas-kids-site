@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" />
     <script>
       window.onload = () => {
         const langSelect = document.getElementById("language-select");
@@ -27,16 +28,9 @@
         langSelect.addEventListener("change", updateLang);
       };
     </script>
-    <style>
-      body {
-        font-family: "Quicksand", sans-serif;
-        background: linear-gradient(to bottom right, #1e293b, #334155);
-        color: #f1f5f9;
-      }
-    </style>
   </head>
   <body
-    class="bg-gradient-to-br from-blue-50 via-yellow-50 to-pink-100 font-sans text-gray-800"
+    class="dark-theme bg-gradient-to-br from-blue-50 via-yellow-50 to-pink-100 font-sans text-gray-800"
   >
     <div class="min-h-screen flex items-center justify-center px-4">
       <div class="w-full max-w-4xl space-y-8">
