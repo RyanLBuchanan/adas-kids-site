@@ -132,3 +132,11 @@ select.theme-select option {
   color: #f1f5f9;
   background-color: #1e293b;
 }
+
+/* Lighten dropdown text for better readability */
+body.dark-theme #language-select,
+body.dark-theme #language-select option,
+body.dark-theme select.theme-select,
+body.dark-theme select.theme-select option {
+  color: #cbd5e1 !important;
+}
