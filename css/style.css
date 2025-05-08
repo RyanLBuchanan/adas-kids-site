@@ -50,43 +50,57 @@ body.dark-theme {
   color: #f1f5f9;
 }
 
-/* styles.css — Ada's Kids Night Theme */
-
-body {
+.dark-theme label,
+.dark-theme h2,
+.dark-theme p,
+.dark-theme select,
+.dark-theme input,
+.dark-theme button {
   font-family: "Quicksand", sans-serif;
-  background: linear-gradient(
-    to bottom right,
-    #1e293b,
-    #334155
-  ); /* Slate blue gradient */
-  color: #f1f5f9;
 }
 
-.dark-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  border: 1px solid #475569; /* Tailwind's slate-600 */
-  border-radius: 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  padding: 2rem;
-  max-width: 28rem;
-  width: 100%;
-  margin: auto;
+.dark-theme h2 {
+  color: #f8fafc;
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
-.dark-input,
-.dark-select {
-  background-color: #1e293b;
-  color: white;
-  border: 1px solid #475569;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  width: 100%;
-}
-
-.dark-label {
-  color: #cbd5e1;
+.dark-theme label {
   font-weight: 600;
-  margin-bottom: 0.25rem;
-  display: block;
+  color: #e2e8f0;
+}
+
+.dark-theme p {
+  color: #cbd5e1;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.dark-theme input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+  color: #f8fafc;
+  background-color: #1e293b;
+  border-color: #475569;
+}
+
+.dark-theme input:focus,
+.dark-theme select:focus,
+.dark-theme textarea:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 1px #93c5fd;
+}
+
+.dark-theme button {
+  font-weight: 600;
+}
+
+.dark-theme h2 span {
+  color: #fbbf24; /* Amber text for flair */
 }
