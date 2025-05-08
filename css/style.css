@@ -84,7 +84,7 @@ body.dark-theme {
 .dark-theme input,
 .dark-theme select,
 .dark-theme textarea {
-  color: #f8fafc;
+  color: #94a3b8;
   background-color: #1e293b;
   border-color: #475569;
 }
@@ -109,27 +109,27 @@ body.dark-theme {
 body.dark-theme select,
 body.dark-theme select option {
   /* white text */
-  color: #f1f5f9 !important;
+  color: #94a3b8 !important;
   /* dark background */
   background-color: #1e293b !important;
 }
 
 /* Ensure the <option> list items also inherit the dark style */
 body.dark-theme select::-ms-expand {
-  color: #f1f5f9;
+  color: #94a3b8;
 }
 
 /* Login page language selector */
 #language-select,
 #language-select option {
-  color: #f1f5f9;
+  color: #94a3b8;
   background-color: #1e293b;
 }
 
 /* Settings page theme selector */
 select.theme-select,
 select.theme-select option {
-  color: #f1f5f9;
+  color: #94a3b8;
   background-color: #1e293b;
 }
 
@@ -138,5 +138,5 @@ body.dark-theme #language-select,
 body.dark-theme #language-select option,
 body.dark-theme select.theme-select,
 body.dark-theme select.theme-select option {
-  color: #cbd5e1 !important;
+  color: #94a3b8 !important;
 }
