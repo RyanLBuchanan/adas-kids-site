@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Talk to Prima</title>
+    <title>Talk to Ada</title>
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
 
     <!-- Tailwind CSS -->
@@ -12,22 +12,53 @@
       rel="stylesheet"
     />
 
-    <!-- Custom Styling for Prima Chat -->
+    <!-- Custom Styling for Chat -->
     <link rel="stylesheet" href="css/play.css" />
 
-    <!-- Google Font for Cheerful Feel -->
+    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      window.onload = () => {
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name") || "Student";
+        const avatar = params.get("avatar") || "Ada";
+        const greeting = document.getElementById("personal-greeting");
+        const persona = document.getElementById("avatar-persona");
+
+        greeting.innerText = `Hi ${name}, I'm Ada.`;
+        persona.innerText = `Tutor Style: ${formatAvatarName(avatar)}`;
+      };
+
+      function formatAvatarName(avatar) {
+        switch (avatar) {
+          case "jarvis":
+            return "J.A.R.V.I.S. (Concise & Logical)";
+          case "cortana":
+            return "Cortana (Helpful & Friendly)";
+          case "alfred":
+            return "Alfred (Wise & Supportive)";
+          case "enterprise-computer":
+            return "Starfleet Computer (Precise & Formal)";
+          default:
+            return "Default (Warm & Professional)";
+        }
+      }
+    </script>
   </head>
+
   <body
     class="bg-gradient-to-br from-yellow-50 via-pink-50 to-pink-100 font-sans text-gray-800"
   >
     <!-- Header -->
     <header class="text-center py-6 shadow bg-white bg-opacity-70">
-      <h1 class="text-3xl font-bold">✨ Talk to Prima</h1>
-      <p class="text-sm text-gray-500">Your joyful AI tutor is here to chat!</p>
+      <h1 id="personal-greeting" class="text-3xl font-bold">Hi, I'm Ada.</h1>
+      <p id="avatar-persona" class="text-sm text-gray-500">
+        Your AI tutor is here to help.
+      </p>
     </header>
 
     <!-- Chat Container -->
@@ -57,7 +88,7 @@
       </form>
     </main>
 
-    <!-- Optional: Back to Home -->
+    <!-- Footer -->
     <footer class="text-center py-4 text-sm text-gray-500">
       <a href="/" class="underline hover:text-pink-600">← Back to Home</a>
     </footer>
