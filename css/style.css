@@ -104,3 +104,17 @@ body.dark-theme {
 .dark-theme h2 span {
   color: #fbbf24; /* Amber text for flair */
 }
+
+/* Dark-theme dropdowns */
+body.dark-theme select,
+body.dark-theme select option {
+  /* white text */
+  color: #f1f5f9 !important;
+  /* dark background */
+  background-color: #1e293b !important;
+}
+
+/* Ensure the <option> list items also inherit the dark style */
+body.dark-theme select::-ms-expand {
+  color: #f1f5f9;
+}
