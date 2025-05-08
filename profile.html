@@ -15,9 +15,9 @@
     />
     <script>
       window.onload = () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const avatar = urlParams.get("avatar");
-        const lang = urlParams.get("lang");
+        const params = new URLSearchParams(window.location.search);
+        const avatar = params.get("avatar");
+        const lang = params.get("lang");
         if (avatar) document.getElementById("avatar-choice").value = avatar;
         if (lang) document.getElementById("lang-choice").value = lang;
       };
@@ -34,7 +34,7 @@
         <p class="text-center text-gray-600 mb-6">
           Final step—just a few details to personalize your session.
         </p>
-        <form action="play.html" method="GET" class="space-y-4">
+        <form action="language.html" method="GET" class="space-y-4">
           <input type="hidden" id="avatar-choice" name="avatar" />
           <input type="hidden" id="lang-choice" name="language" />
 
@@ -45,6 +45,7 @@
               name="name"
               required
               class="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter your name"
             />
           </div>
 
@@ -57,6 +58,7 @@
               name="age"
               required
               class="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="e.g., 20 or Sophomore"
             />
           </div>
 
@@ -65,7 +67,7 @@
               type="submit"
               class="w-full bg-pink-500 text-white py-3 rounded-lg font-semibold shadow hover:bg-pink-600"
             >
-              Launch Prima →
+              Continue →
             </button>
           </div>
         </form>
