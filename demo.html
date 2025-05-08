@@ -64,9 +64,8 @@
           <a
             href="login.html"
             class="block py-2 px-4 font-semibold bg-pink-500 text-white hover:bg-pink-600"
-            >Talk to Ada</a
-          >
-      </nav>
+            >Talk to Ada</a>
+        </div>
     </header>
 
     <!-- ✅ Main Content (use this to space content below navbar) -->
@@ -257,5 +256,18 @@
 
     <!-- ✅ Scripts at end of body -->
     <script src="js/script.js"></script>
+    <script>
+      // Mobile menu toggle
+      window.addEventListener('load', () => {
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+          btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+      </script>
+      
   </body>
 </html>
