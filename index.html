@@ -35,11 +35,11 @@
         </a>
         <div id="nav-links" class="hidden md:flex space-x-6 items-center">
           <a href="#home" class="hover:text-yellow-500">Home</a>
-          <a href="#about" class="hover:text-yellow-500">About</a>
-          <a href="#testimonials" class="hover:text-yellow-500">Testimonials</a>
           <a href="#vision" class="hover:text-yellow-500">Hear Our Vision</a>
+          <!-- <a href="#about" class="hover:text-yellow-500">About</a> -->
+          <a href="#testimonials" class="hover:text-yellow-500">Testimonials</a>
           <a href="demo.html" class="hover:text-yellow-500">Demo</a>
-          <a href="#projects" class="hover:text-yellow-500">Projects</a>
+          <!-- <a href="#projects" class="hover:text-yellow-500">Projects</a> -->
           <a href="#consulting" class="hover:text-yellow-500">Consulting</a>
           <a
             href="login.html"
@@ -56,13 +56,13 @@
       </nav>
       <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-90">
         <a href="#home" class="block py-2 px-4 border-b">Home</a>
-        <a href="#about" class="block py-2 px-4 border-b">About</a>
+        <a href="#vision" class="block py-2 px-4 border-b">Hear Our Vision</a>
+        <!-- <a href="#about" class="block py-2 px-4 border-b">About</a> -->
         <a href="#testimonials" class="block py-2 px-4 border-b"
           >Testimonials</a
         >
-        <a href="#vision" class="block py-2 px-4 border-b">Hear Our Vision</a>
         <a href="demo.html" class="block py-2 px-4 border-b">Demo</a>
-        <a href="#projects" class="block py-2 px-4 border-b">Projects</a>
+        <!-- <a href="#projects" class="block py-2 px-4 border-b">Projects</a> -->
         <a href="#consulting" class="block py-2 px-4 border-b">Consulting</a>
         <a
           href="login.html"
@@ -146,6 +146,95 @@
         <!-- Content... -->
       </section>
 
+      <!-- Testimonials Carousel -->
+      <section id="testimonials" class="text-center my-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          What Parents and Students Are Saying
+        </h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto mb-10">
+          Real voices, real impact—see how Ada’s Kids is transforming the way
+          children experience learning.
+        </p>
+
+        <!-- Carousel wrapper -->
+        <div
+          id="testimonial-carousel"
+          class="relative overflow-hidden max-w-xl mx-auto"
+        >
+          <div
+            class="carousel-track flex transition-transform duration-700 w-full"
+          >
+            <!-- Slide 1 -->
+            <div
+              class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow"
+            >
+              <img
+                src="/assets/images/testimonial1.png"
+                alt="Happy Parent"
+                class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4"
+              />
+              <p class="italic text-gray-800 mb-2">
+                “Ada’s Kids helped my daughter fall in love with learning again.
+                It’s like she has her own magical AI tutor!”
+              </p>
+              <p class="text-sm font-semibold text-gray-500">
+                — A Happy Parent
+              </p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div
+              class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow"
+            >
+              <img
+                src="/assets/images/testimonial2.png"
+                alt="Young Student"
+                class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4"
+              />
+              <p class="italic text-gray-800 mb-2">
+                “I used to get bored with school, but now I look forward to
+                learning every day!”
+              </p>
+              <p class="text-sm font-semibold text-gray-500">
+                — A Young Learner
+              </p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div
+              class="min-w-full p-6 text-center bg-white bg-opacity-20 backdrop-blur-md rounded-xl shadow"
+            >
+              <img
+                src="/assets/images/testimonial3.png"
+                alt="Grateful Student"
+                class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-300 mb-4"
+              />
+              <p class="italic text-gray-800 mb-2">
+                “Ada’s Kids is so much fun. I’m always excited to learn
+                something new!”
+              </p>
+              <p class="text-sm font-semibold text-gray-500">
+                — A Grateful Student
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <button
+            id="prevBtn"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 text-2xl"
+          >
+            ←
+          </button>
+          <button
+            id="nextBtn"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 text-2xl"
+          >
+            →
+          </button>
+        </div>
+      </section>
+
       <!-- Stay in the Loop -->
       <section
         id="stay-in-loop"
@@ -167,21 +256,6 @@
         </iframe>
       </section>
 
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="text-center my-16">
-        <!-- Content... -->
-      </section>
-
-      <!-- Projects Section -->
-      <section
-        id="projects"
-        class="py-20 px-4"
-        data-aos="fade-up"
-        data-aos-duration="800"
-      >
-        <!-- Content... -->
-      </section>
-
       <!-- Consulting Section -->
       <section
         id="consulting"
@@ -189,7 +263,75 @@
         data-aos="fade-up"
         data-aos-duration="800"
       >
-        <!-- Content... -->
+        <div class="max-w-3xl mx-auto text-center">
+          <h3 class="text-3xl font-semibold mb-4">
+            Prompt Engineering Consulting
+          </h3>
+          <p class="mb-6">
+            Need help building effective AI interactions? Ryan Buchanan offers
+            expert consulting in prompt engineering, conversational AI design,
+            and EdTech applications of large language models. Whether you're
+            building a product or refining your AI voice, we can help.
+          </p>
+          <p class="mb-2 font-medium">Services include:</p>
+          <ul class="text-left list-disc list-inside mb-6">
+            <li>Prompt tuning and LLM optimization</li>
+            <li>Use case design and workflow strategy</li>
+            <li>Educational prompt frameworks for learners</li>
+            <li>Voice and personality design for AI agents</li>
+          </ul>
+          <div class="text-left bg-pink-50 p-6 rounded-xl shadow-inner">
+            <h4 class="text-xl font-bold mb-2">About Me</h4>
+            <img
+              src="assets/headshot-happy.jpg"
+              alt="Ryan Buchanan"
+              class="w-45 h-40 rounded-full mx-auto mb-4 border-4 border-pink-200 shadow-md"
+            />
+            <p class="mb-4">
+              Hi, I’m Ryan — a lifelong educator, AI enthusiast, and passionate
+              believer in joyful learning.
+            </p>
+            <p class="mb-4">
+              I bring over
+              <strong
+                >15 years of experience as a teacher and instructional
+                designer</strong
+              >, having worked internationally in roles ranging from English
+              instructor at a Chinese medical university to tech mentor at a
+              Fortune 500 defense contractor. I’ve also founded and run an
+              EdTech company focused on immersive learning for children.
+            </p>
+            <p class="mb-4">
+              I hold <strong>three master’s degrees</strong>, including:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+              <li>A Master of Education (M.Ed.)</li>
+              <li>A Master’s in Data Analytics</li>
+              <li>A Master of Business Administration</li>
+            </ul>
+            <p class="mb-4">
+              I’m currently pursuing a
+              <strong>Bachelor of Science in Computer Science</strong> to deepen
+              my technical foundation and better integrate with emerging AI
+              systems.
+            </p>
+            <p class="mb-4">
+              My current focus is on
+              <strong>prompt engineering and AI literacy</strong> — helping
+              individuals, startups, and educators harness the power of large
+              language models for more intuitive, creative, and effective
+              digital interactions.
+            </p>
+            <p>
+              📬 Contact me:
+              <a
+                href="mailto:ryan@adaskids.ai"
+                class="text-pink-600 font-semibold hover:underline"
+                >ryan@adaskids.ai</a
+              >
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
