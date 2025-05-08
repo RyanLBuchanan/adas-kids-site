@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Google Font for Ada's Kids -->
+    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -20,12 +20,11 @@
   <body
     class="bg-gradient-to-br from-yellow-100 via-pink-100 to-pink-200 text-gray-800"
   >
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <header class="bg-white bg-opacity-80 shadow-md fixed top-0 w-full z-50">
       <nav
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
       >
-        <!-- Logo -->
         <a href="#home" class="flex items-center space-x-2">
           <img
             src="/assets/adas-kids-logo.png"
@@ -34,7 +33,6 @@
           />
           <span class="font-bold text-lg">Ada's Kids</span>
         </a>
-        <!-- Nav Links -->
         <div id="nav-links" class="hidden md:flex space-x-6 items-center">
           <a href="#home" class="hover:text-yellow-500">Home</a>
           <a href="#about" class="hover:text-yellow-500">About</a>
@@ -43,14 +41,12 @@
           <a href="demo.html" class="hover:text-yellow-500">Demo</a>
           <a href="#projects" class="hover:text-yellow-500">Projects</a>
           <a href="#consulting" class="hover:text-yellow-500">Consulting</a>
-          <!-- Talk to Ada Button -->
           <a
             href="login.html"
             class="ml-4 bg-pink-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
             >Talk to Ada</a
           >
         </div>
-        <!-- Hamburger (Mobile) -->
         <button
           id="mobile-menu-button"
           class="md:hidden text-gray-700 focus:outline-none"
@@ -58,7 +54,6 @@
           ☰
         </button>
       </nav>
-      <!-- Mobile Menu -->
       <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-90">
         <a href="#home" class="block py-2 px-4 border-b">Home</a>
         <a href="#about" class="block py-2 px-4 border-b">About</a>
@@ -78,7 +73,7 @@
     </header>
 
     <main class="pt-24">
-      <!-- Home Section -->
+      <!-- Home & Demo Combined -->
       <section
         id="home"
         class="text-center py-24 px-4"
@@ -96,45 +91,26 @@
           power of modern AI. Our mission is to make learning feel like play and
           to help children fall in love with learning for its own sake.
         </p>
-        <div class="mt-10">
-          <div
-            class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md max-w-xl mx-auto mb-8"
-          >
-            <h3 class="text-xl font-semibold mb-2">🎥 Demo Coming Soon</h3>
-            <p class="text-gray-700">
-              We'll be recording a short preview of Ada in action. Stay tuned!
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Demo Storyboard Section -->
-      <section id="demo-preview" class="text-center my-20 px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">
-          Demo Coming Soon
-        </h2>
-        <p
-          class="text-gray-500 text-lg max-w-2xl mx-auto mb-10"
-          data-aos="fade-up"
-          data-aos-delay="100"
+        <div
+          class="mt-10 max-w-xl mx-auto bg-white bg-opacity-80 rounded-xl p-6 shadow-md"
         >
-          Follow the journey of a young learner discovering the joy of knowledge
-          with Ada’s Kids.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <!-- Storyboard slides... -->
-        </div>
-        <div class="mt-12" data-aos="fade-up" data-aos-delay="600">
+          <h3 class="text-2xl font-semibold mb-2">🎥 Demo Coming Soon</h3>
+          <p class="text-gray-700 mb-4">
+            We'll be recording a short preview of Ada in action. Stay tuned!
+          </p>
+          <p class="text-gray-700 mb-6">
+            Follow the journey of a young learner discovering the joy of
+            knowledge with Ada's Kids.
+          </p>
           <a
             href="#"
             class="inline-block bg-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 hover:shadow-yellow-300 transition-all duration-300"
+            >Watch the Full Demo Soon</a
           >
-            Watch the Full Demo Soon
-          </a>
         </div>
       </section>
 
-      <!-- Vision Section (moved up) -->
+      <!-- Vision Section -->
       <section
         id="vision"
         class="py-20 px-4 bg-white bg-opacity-80"
@@ -153,8 +129,8 @@
             Your browser does not support the audio element.
           </audio>
           <p class="text-lg text-gray-700">
-            Ada’s Kids is building a future where every child has a mentor for
-            life — nurturing curiosity, confidence, and career discovery through
+            Ada's Kids is building a future where every child has a mentor for
+            life—nurturing curiosity, confidence, and career discovery through
             personalized AI companions. 🌱
           </p>
         </div>
@@ -170,28 +146,28 @@
         <!-- Content... -->
       </section>
 
-      <!-- Stay in the Loop (moved below About) -->
+      <!-- Stay in the Loop -->
       <section
         id="stay-in-loop"
-        class="overflow-hidden rounded-xl shadow-md border border-gray-300 max-w-xl mx-auto py-10 px-4"
+        class="overflow-hidden rounded-xl shadow-md border border-gray-300 max-w-xl mx-auto py-10 px-4 my-20"
       >
         <h3 class="text-xl font-bold text-center text-pink-600 mb-4">
           ✨ Stay in the Loop
         </h3>
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSd6v2WiTEtaXBpbWyYTTzuP0B-mBRT\
-VF5IC2fpsk5tZqi_U6Q/viewform?embedded=true"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSd6v2WiTEtaXBpbWyYTTzuP0B-mBRTVF5IC2fpsk5tZqi_U6Q/viewform?embedded=true"
           width="100%"
           height="600"
           frameborder="0"
           marginheight="0"
           marginwidth="0"
           class="w-full h-[600px]"
-          >Loading…</iframe
         >
+          Loading…
+        </iframe>
       </section>
 
-      <!-- Testimonials -->
+      <!-- Testimonials Section -->
       <section id="testimonials" class="text-center my-16">
         <!-- Content... -->
       </section>
