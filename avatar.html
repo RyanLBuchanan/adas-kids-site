@@ -13,6 +13,18 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      window.onload = () => {
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name");
+        const age = params.get("age");
+        const lang = params.get("lang");
+        // Pre-fill hidden fields if needed
+        document.getElementById("name-choice").value = name;
+        document.getElementById("age-choice").value = age;
+        document.getElementById("lang-choice").value = lang;
+      };
+    </script>
   </head>
   <body
     class="bg-gradient-to-br from-blue-50 via-yellow-50 to-pink-100 font-sans text-gray-800"
@@ -26,70 +38,78 @@
           Select the personality style you'd like to guide you through this
           session.
         </p>
-        <form action="login.html" method="GET">
+        <form action="play.html" method="GET">
+          <input type="hidden" id="name-choice" name="name" />
+          <input type="hidden" id="age-choice" name="age" />
+          <input type="hidden" id="lang-choice" name="language" />
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <!-- Avatar Options -->
+            <!-- Carvis -->
             <label
               class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
             >
               <input
                 type="radio"
                 name="avatar"
-                value="jarvis"
+                value="carvis"
                 class="hidden"
                 required
               />
-              <h2 class="text-xl font-semibold text-center mb-2">
-                J.A.R.V.I.S. (Concise & Logical)
-              </h2>
+              <h2 class="text-xl font-semibold text-center mb-2">Carvis</h2>
               <p class="text-sm text-center text-gray-500">
-                Efficient, to-the-point, with a slight British edge.
+                Certainly Another Really Very Intelligent System — concise &
+                logical.
               </p>
             </label>
 
+            <!-- Chortana -->
             <label
               class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
             >
               <input
                 type="radio"
                 name="avatar"
-                value="cortana"
+                value="chortana"
                 class="hidden"
               />
-              <h2 class="text-xl font-semibold text-center mb-2">
-                Cortana (Helpful & Friendly)
-              </h2>
+              <h2 class="text-xl font-semibold text-center mb-2">Chortana</h2>
               <p class="text-sm text-center text-gray-500">
-                Warm, knowledgeable, and focused on your success.
+                Helpful & Friendly — warm, knowledgeable, and focused on your
+                success.
               </p>
             </label>
 
-            <label
-              class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
-            >
-              <input type="radio" name="avatar" value="alfred" class="hidden" />
-              <h2 class="text-xl font-semibold text-center mb-2">
-                Alfred (Wise & Supportive)
-              </h2>
-              <p class="text-sm text-center text-gray-500">
-                Gentle guidance with calm confidence.
-              </p>
-            </label>
-
+            <!-- Calfred -->
             <label
               class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
             >
               <input
                 type="radio"
                 name="avatar"
-                value="enterprise-computer"
+                value="calfred"
+                class="hidden"
+              />
+              <h2 class="text-xl font-semibold text-center mb-2">Calfred</h2>
+              <p class="text-sm text-center text-gray-500">
+                Wise & Supportive — gentle guidance with calm confidence.
+              </p>
+            </label>
+
+            <!-- Starship Computer -->
+            <label
+              class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
+            >
+              <input
+                type="radio"
+                name="avatar"
+                value="starship-computer"
                 class="hidden"
               />
               <h2 class="text-xl font-semibold text-center mb-2">
-                Starfleet Computer (Precise & Formal)
+                Starship Computer
               </h2>
               <p class="text-sm text-center text-gray-500">
-                Neutral, accurate, and mission-focused.
+                Precise & Formal — neutral, accurate, and mission-focused.
               </p>
             </label>
           </div>
