@@ -118,3 +118,17 @@ body.dark-theme select option {
 body.dark-theme select::-ms-expand {
   color: #f1f5f9;
 }
+
+/* Login page language selector */
+#language-select,
+#language-select option {
+  color: #f1f5f9;
+  background-color: #1e293b;
+}
+
+/* Settings page theme selector */
+select.theme-select,
+select.theme-select option {
+  color: #f1f5f9;
+  background-color: #1e293b;
+}
