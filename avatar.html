@@ -13,117 +13,139 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+        background: linear-gradient(to bottom right, #1e293b, #334155);
+        color: #f1f5f9;
+      }
+      label {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      label:hover {
+        background-color: rgba(59, 130, 246, 0.1);
+      }
+      input[type="radio"]:checked + * {
+        border: 2px solid #f472b6;
+      }
+      .avatar-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    </style>
     <script>
       window.onload = () => {
         const params = new URLSearchParams(window.location.search);
-        const name = params.get("name");
-        const age = params.get("age");
-        const lang = params.get("lang");
-        // Pre-fill hidden fields if needed
-        document.getElementById("name-choice").value = name;
-        document.getElementById("age-choice").value = age;
-        document.getElementById("lang-choice").value = lang;
+        ["name", "age", "language"].forEach((k) => {
+          const v = params.get(k);
+          if (v) document.getElementById(`${k}-choice`).value = v;
+        });
       };
     </script>
   </head>
-  <body
-    class="bg-gradient-to-br from-blue-50 via-yellow-50 to-pink-100 font-sans text-gray-800"
-  >
-    <div class="min-h-screen flex items-center justify-center px-4">
-      <div class="max-w-3xl w-full">
-        <h1 class="text-3xl font-bold text-center mb-8">
-          🧠 Choose Your Tutor
-        </h1>
-        <p class="text-center text-gray-600 mb-6">
-          Select the personality style you'd like to guide you through this
-          session.
-        </p>
-        <form action="play.html" method="GET">
-          <input type="hidden" id="name-choice" name="name" />
-          <input type="hidden" id="age-choice" name="age" />
-          <input type="hidden" id="lang-choice" name="language" />
+  <body class="min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-3xl">
+      <h1 class="text-3xl font-bold text-center mb-6">🧠 Choose Your Tutor</h1>
+      <p class="text-center text-slate-400 mb-8">
+        Select the personality style you'd like to guide you through this
+        session.
+      </p>
+      <form action="play.html" method="GET" class="space-y-6">
+        <input type="hidden" id="name-choice" name="name" />
+        <input type="hidden" id="age-choice" name="age" />
+        <input type="hidden" id="language-choice" name="language" />
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <!-- Carvis -->
-            <label
-              class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
-            >
-              <input
-                type="radio"
-                name="avatar"
-                value="carvis"
-                class="hidden"
-                required
-              />
-              <h2 class="text-xl font-semibold text-center mb-2">Carvis</h2>
-              <p class="text-sm text-center text-gray-500">
-                Certainly Another Really Very Intelligent System — concise &
-                logical.
-              </p>
-            </label>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Carvis -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="carvis"
+              class="hidden"
+              required
+            />
+            <img
+              src="assets/avatars/carvis.png"
+              alt="Carvis"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Carvis</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Certainly Another Really Very Intelligent System — concise &
+              logical.
+            </p>
+          </label>
 
-            <!-- Chortana -->
-            <label
-              class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
-            >
-              <input
-                type="radio"
-                name="avatar"
-                value="chortana"
-                class="hidden"
-              />
-              <h2 class="text-xl font-semibold text-center mb-2">Chortana</h2>
-              <p class="text-sm text-center text-gray-500">
-                Helpful & Friendly — warm, knowledgeable, and focused on your
-                success.
-              </p>
-            </label>
+          <!-- Chortana -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input type="radio" name="avatar" value="chortana" class="hidden" />
+            <img
+              src="assets/avatars/chortana.png"
+              alt="Chortana"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Chortana</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Helpful & Friendly — warm, knowledgeable, and focused on your
+              success.
+            </p>
+          </label>
 
-            <!-- Calfred -->
-            <label
-              class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
-            >
-              <input
-                type="radio"
-                name="avatar"
-                value="calfred"
-                class="hidden"
-              />
-              <h2 class="text-xl font-semibold text-center mb-2">Calfred</h2>
-              <p class="text-sm text-center text-gray-500">
-                Wise & Supportive — gentle guidance with calm confidence.
-              </p>
-            </label>
+          <!-- Calfred -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input type="radio" name="avatar" value="calfred" class="hidden" />
+            <img
+              src="assets/avatars/calfred.png"
+              alt="Calfred"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Calfred</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Wise & Supportive — gentle guidance with calm confidence.
+            </p>
+          </label>
 
-            <!-- Starship Computer -->
-            <label
-              class="block bg-white p-6 rounded-xl shadow hover:bg-blue-100 transition cursor-pointer"
-            >
-              <input
-                type="radio"
-                name="avatar"
-                value="starship-computer"
-                class="hidden"
-              />
-              <h2 class="text-xl font-semibold text-center mb-2">
-                Starship Computer
-              </h2>
-              <p class="text-sm text-center text-gray-500">
-                Precise & Formal — neutral, accurate, and mission-focused.
-              </p>
-            </label>
-          </div>
+          <!-- Starship Computer -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="starship-computer"
+              class="hidden"
+            />
+            <img
+              src="assets/avatars/starship.png"
+              alt="Starship Computer"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Starship Computer</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Precise & Formal — neutral, accurate, and mission-focused.
+            </p>
+          </label>
+        </div>
 
-          <div class="text-center">
-            <button
-              type="submit"
-              class="bg-pink-500 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-pink-600"
-            >
-              Continue →
-            </button>
-          </div>
-        </form>
-      </div>
+        <div class="text-center pt-4">
+          <button
+            type="submit"
+            class="bg-pink-500 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-pink-600"
+          >
+            Continue →
+          </button>
+        </div>
+      </form>
     </div>
   </body>
 </html>
