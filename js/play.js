@@ -1,14 +1,14 @@
-// play.js — for Prima's Chat UI on play.html
+// play.js — Ada’s Chat UI
 
-// ✅ DOM elements
-const form = document.getElementById("prima-form");
-const input = document.getElementById("prima-input");
-const chatLog = document.getElementById("prima-chat-log");
+// DOM elements
+const form = document.getElementById("ask-form");
+const input = document.getElementById("user-input");
+const chatLog = document.getElementById("chat-log");
 
-// ✅ Handle message submission
 if (form && input && chatLog) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const message = input.value.trim();
     if (!message) return;
 
@@ -16,34 +16,33 @@ if (form && input && chatLog) {
     input.value = "";
 
     try {
-      const response = await fetch("/.netlify/functions/chat-ada", {
+      const res = await fetch("/.netlify/functions/chat-ada", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),
       });
+      const data = await res.json();
 
-      const data = await response.json();
-      if (response.ok) {
-        appendMessage("Prima", data.reply);
+      if (res.ok) {
+        appendMessage("Ada", data.reply);
       } else {
         appendMessage(
-          "Prima",
+          "Ada",
           `⚠️ Error: ${data.error?.message || "Something went wrong."}`
         );
       }
     } catch (err) {
-      appendMessage("Prima", "❌ Network error. Please try again later.");
+      appendMessage("Ada", "❌ Network error. Please try again later.");
     }
   });
 }
 
-// ✅ Add messages to chat
 function appendMessage(sender, message) {
-  const wrapper = document.createElement("div");
-  wrapper.classList.add("mb-2");
-  wrapper.innerHTML = `<strong>${sender}:</strong> ${message}`;
-  chatLog.appendChild(wrapper);
+  const div = document.createElement("div");
+  div.classList.add("mb-2");
+  div.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatLog.appendChild(div);
   chatLog.scrollTop = chatLog.scrollHeight;
 }
+
+// Keep your AOS and mobile-menu toggles in script.js as before
