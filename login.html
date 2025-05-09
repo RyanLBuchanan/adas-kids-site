@@ -20,89 +20,78 @@
         color: #f1f5f9;
       }
     </style>
-    <script>
-      // on load, read & sync the language dropdown
-      window.onload = () => {
-        const params = new URLSearchParams(location.search);
-        const lang = params.get("language") || "en";
-        const sel = document.getElementById("language-select");
-        sel.value = lang;
-        sel.addEventListener("change", () => {
-          params.set("language", sel.value);
-          location.search = params.toString();
-        });
-      };
-    </script>
   </head>
   <body class="min-h-screen flex items-center justify-center px-4">
-    <!-- Header with Nav + Lang Switcher -->
     <header
       class="fixed top-0 w-full bg-white bg-opacity-10 backdrop-blur border-b border-slate-700 shadow z-50"
     >
-      <div
+      <nav
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
       >
+        <!-- Logo -->
         <a href="index.html" class="flex items-center space-x-2">
           <img
             src="assets/adas-kids-logo.png"
             alt="Ada's Kids Logo"
             class="h-8 w-8"
           />
-          <span class="font-bold text-lg text-slate-200">Ada's Kids</span>
+          <span class="font-bold text-lg">Ada's Kids</span>
         </a>
-        <div class="flex items-center space-x-4">
-          <nav class="hidden md:flex space-x-4">
-            <a href="index.html" class="text-slate-200 hover:text-white"
-              >Home</a
-            >
-            <a href="index.html#vision" class="text-slate-200 hover:text-white"
-              >Vision</a
-            >
-            <a href="demo.html" class="text-slate-200 hover:text-white">Demo</a>
-            <a href="reports.html" class="text-slate-200 hover:text-white"
-              >Reports</a
-            >
-            <a href="settings.html" class="text-slate-200 hover:text-white"
-              >Settings</a
-            >
-          </nav>
-          <select
-            id="language-select"
-            class="p-2 rounded-lg border border-slate-600 bg-slate-800 text-slate-300"
+        <div class="space-x-4 hidden md:flex">
+          <a href="index.html" class="text-slate-200 hover:text-white">Home</a>
+          <a href="index.html#vision" class="text-slate-200 hover:text-white"
+            >Vision</a
           >
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="zh">中文</option>
-            <option value="ar">العربية</option>
-            <option value="it">Italiano</option>
-          </select>
+          <a href="demo.html" class="text-slate-200 hover:text-white">Demo</a>
+          <a href="reports.html" class="text-slate-200 hover:text-white"
+            >Reports</a
+          >
+          <a href="settings.html" class="text-slate-200 hover:text-white"
+            >Settings</a
+          >
         </div>
-      </div>
+      </nav>
     </header>
-
-    <div class="w-full max-w-4xl space-y-8 mt-24">
+    <div class="w-full max-w-4xl space-y-8 mt-20">
       <!-- Language Selection -->
       <div
         class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg border border-slate-600"
       >
-        <label
-          for="language-select"
-          class="block mb-2 font-semibold text-slate-200"
+        <label class="block mb-2 font-semibold text-slate-200"
           >Preferred Language</label
         >
         <select
+          +
           id="language-select"
-          class="w-full p-3 border border-slate-600 bg-slate-800 text-slate-300 rounded-lg"
+          +
+          class="w-full p-3 border border-slate-600 bg-slate-800 rounded-lg"
+          +
+          style="color: #94a3b8; background-color: #1e293b"
+          +
         >
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="de">Deutsch</option>
-          <option value="zh">中文</option>
-          <option value="ar">العربية</option>
-          <option value="it">Italiano</option>
+          +
+          <option value="en" style="color: #94a3b8; background-color: #1e293b">
+            English
+          </option>
+          +
+          <option value="es" style="color: #94a3b8; background-color: #1e293b">
+            Español
+          </option>
+          <option value="fr" style="color: #94a3b8; background-color: #1e293b">
+            Français
+          </option>
+          <option value="de" style="color: #94a3b8; background-color: #1e293b">
+            Deutsch
+          </option>
+          <option value="zh" style="color: #94a3b8; background-color: #1e293b">
+            中文
+          </option>
+          <option value="ar" style="color: #94a3b8; background-color: #1e293b">
+            العربية
+          </option>
+          <option value="it" style="color: #94a3b8; background-color: #1e293b">
+            Italiano
+          </option>
         </select>
       </div>
 
@@ -119,6 +108,7 @@
             class="space-y-4"
           >
             <input type="hidden" name="language" id="language-choice" />
+
             <div>
               <label class="block mb-1 font-semibold text-slate-200"
                 >Username</label
