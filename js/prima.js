@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatLog = document.getElementById("chat-log");
 
   // 🔧 Update this URL to point at your Jetson Orin Nano's Phi-2 server
-  const API_URL = "http://<JETSON_IP>:5000/api/chat"; // e.g. 'http://192.168.1.50:5000/api/chat'
+  const API_URL = "http://192.168.96.18:5000/api/chat"; // e.g. 'http://192.168.1.50:5000/api/chat'
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
