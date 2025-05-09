@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -41,13 +42,18 @@
       button:hover {
         background-color: #7c3aed;
       }
+      .avatar-img {
+        width: 12rem;
+        height: auto;
+        object-fit: contain;
+      }
     </style>
 
     <script>
       window.onload = () => {
         const params = new URLSearchParams(window.location.search);
         const name = params.get("name") || "Friend";
-        const avatar = params.get("avatar") || "cortana";
+        const avatar = params.get("avatar") || "prima";
         document.getElementById(
           "personal-greeting"
         ).innerText = `Hi ${name}, I'm Prima.`;
@@ -112,7 +118,7 @@
         <img
           src="/assets/avatars/prima.png"
           alt="Prima Avatar"
-          class="w-51 h-72 rounded-full shadow-lg mb-4"
+          class="avatar-img rounded-full shadow-lg mb-4"
         />
         <p class="text-center">Prima</p>
       </div>
@@ -123,7 +129,7 @@
     </footer>
 
     <!-- Scripts -->
-    <!-- TODO: Replace play.js with prima.js to wire up Phi-2 endpoint -->
+    <!-- Now pointing to prima.js -->
     <script src="js/prima.js"></script>
   </body>
 </html>
