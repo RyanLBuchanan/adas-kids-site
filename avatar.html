@@ -58,7 +58,7 @@
         <input type="hidden" id="age-choice" name="age" />
         <input type="hidden" id="language-choice" name="language" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Carvis -->
           <label
             class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
@@ -133,6 +133,28 @@
             <h2 class="font-semibold mb-1 text-lg">Starship Computer</h2>
             <p class="text-sm text-slate-400 text-center">
               Precise & Formal — neutral, accurate, and mission-focused.
+            </p>
+          </label>
+
+          <!-- Code of Duty (Gaming Overlay) -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="code-of-duty"
+              class="hidden"
+            />
+            <img
+              src="assets/avatars/code-of-duty.png"
+              alt="Code of Duty"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Code of Duty</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Tactical & Focused — mission-driven style for gamers and
+              strategists.
             </p>
           </label>
         </div>
