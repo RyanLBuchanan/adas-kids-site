@@ -40,64 +40,6 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       }
     </style>
-    <script>
-      function formatAvatarName(avatar) {
-        switch (avatar) {
-          case "carvis":
-            return "J.A.R.V.I.S. (Concise & Logical)";
-          case "chortana":
-            return "Cortana (Helpful & Friendly)";
-          case "calfred":
-            return "Alfred (Wise & Supportive)";
-          case "starship-computer":
-            return "Starship Computer (Precise & Formal)";
-          case "code-of-duty":
-            return "Code of Duty (Tactical & Focused)";
-          case "ada":
-            return "Ada (Empathetic & Inspiring)";
-          default:
-            return "Ada (Empathetic & Inspiring)";
-        }
-      }
-
-      function avatarImagePath(avatar) {
-        switch (avatar) {
-          case "carvis":
-            return "/assets/avatars/carvis.png";
-          case "chortana":
-            return "/assets/avatars/chortana.png";
-          case "calfred":
-            return "/assets/avatars/calfred.png";
-          case "starship-computer":
-            return "/assets/avatars/starship.png";
-          case "code-of-duty":
-            return "/assets/avatars/code-of-duty.png";
-          case "ada":
-            return "/assets/avatars/ada.png";
-          default:
-            return "/assets/avatars/ada.png";
-        }
-      }
-
-      window.onload = () => {
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get("name") || "Student";
-        const avatar = params.get("avatar") || "chortana";
-        document.getElementById(
-          "personal-greeting"
-        ).innerText = `Hi ${name}, I'm ${avatar}.`;
-        document.getElementById(
-          "avatar-persona"
-        ).innerText = `Tutor Style: ${formatAvatarName(avatar)}`;
-
-        // Update avatar image and label
-        const imgEl = document.getElementById("avatar-image");
-        const labelEl = document.getElementById("avatar-label");
-        imgEl.src = avatarImagePath(avatar);
-        imgEl.alt = formatAvatarName(avatar);
-        labelEl.innerText = formatAvatarName(avatar).split(" ")[0];
-      };
-    </script>
   </head>
 
   <body class="min-h-screen">
