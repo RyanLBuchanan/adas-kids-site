@@ -1,6 +1,9 @@
 // play.js — Ada’s Chat UI + Avatar Initialization
 
-// 1) Avatar helpers
+// 1) Keep track of the last AI reply for TTS
+let lastResponse = "";
+
+// 2) Avatar helpers
 function formatAvatarName(avatar) {
   switch (avatar) {
     case "carvis":
@@ -10,7 +13,7 @@ function formatAvatarName(avatar) {
     case "calfred":
       return "Alfred (Wise & Supportive)";
     case "starship-computer":
-      return "Starship Computer (Precise & Formal)";
+      return "Starfleet Computer (Precise & Formal)";
     case "code-of-duty":
       return "Code of Duty (Tactical & Focused)";
     case "ada":
@@ -39,7 +42,7 @@ function avatarImagePath(avatar) {
   }
 }
 
-// 2) Run everything after DOM is ready
+// 3) Run everything after DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   // — Avatar / Greeting setup —
   const params = new URLSearchParams(window.location.search);
@@ -70,11 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
     labelEl.innerText = avatarLabel;
   }
 
-  // — Chat form setup —
+  // — Chat form & TTS setup —
   const form = document.getElementById("ask-form");
   const input = document.getElementById("user-input");
   const chatLog = document.getElementById("chat-log");
+  const playBtn = document.getElementById("play-btn");
 
+  // Chat submission handler
   if (form && input && chatLog) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -94,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (res.ok) {
           appendMessage("Ada", data.reply);
+          lastResponse = data.reply; // ← store AI reply for TTS
         } else {
           appendMessage(
             "Ada",
@@ -105,9 +111,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Play button → speak lastResponse
+  if (playBtn) {
+    if (!("speechSynthesis" in window)) {
+      playBtn.disabled = true;
+      playBtn.title = "Text-to-Speech not supported";
+    } else {
+      playBtn.addEventListener("click", () => {
+        if (!lastResponse) return;
+        const utter = new SpeechSynthesisUtterance(lastResponse);
+        window.speechSynthesis.speak(utter);
+      });
+    }
+  }
 });
 
-// 3) Message appender
+// 4) Message appender
 function appendMessage(sender, message) {
   const div = document.createElement("div");
   div.classList.add("mb-2");
