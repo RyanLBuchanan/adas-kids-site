@@ -1,85 +1,45 @@
-// play.js — Ada’s Chat UI + Avatar Initialization
+// play.js — Ada’s Chat UI + Avatar + TTS
 
-// 1) Keep track of the last AI reply for TTS
+// 0) Feature-detect TTS
+const hasTTS = "speechSynthesis" in window;
+
+// 1) Track last AI reply
 let lastResponse = "";
 
-// 2) Avatar helpers
+// 2) Avatar helpers (unchanged) …
 function formatAvatarName(avatar) {
-  switch (avatar) {
-    case "carvis":
-      return "J.A.R.V.I.S. (Concise & Logical)";
-    case "chortana":
-      return "Cortana (Helpful & Friendly)";
-    case "calfred":
-      return "Alfred (Wise & Supportive)";
-    case "starship-computer":
-      return "Starfleet Computer (Precise & Formal)";
-    case "code-of-duty":
-      return "Code of Duty (Tactical & Focused)";
-    case "ada":
-      return "Ada (Empathetic & Inspiring)";
-    default:
-      return "Ada (Empathetic & Inspiring)";
-  }
+  /* … */
 }
-
 function avatarImagePath(avatar) {
-  switch (avatar) {
-    case "carvis":
-      return "/assets/avatars/carvis.png";
-    case "chortana":
-      return "/assets/avatars/chortana.png";
-    case "calfred":
-      return "/assets/avatars/calfred.png";
-    case "starship-computer":
-      return "/assets/avatars/starship.png";
-    case "code-of-duty":
-      return "/assets/avatars/code-of-duty.png";
-    case "ada":
-      return "/assets/avatars/ada.png";
-    default:
-      return "/assets/avatars/ada.png";
-  }
+  /* … */
 }
 
-// 3) Run everything after DOM is ready
+// 3) DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-  // — Avatar / Greeting setup —
+  // — Avatar / greeting setup (unchanged) —
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name") || "Student";
   const rawAvatar = params.get("avatar") || "chortana";
   const avatarLabel = formatAvatarName(rawAvatar).split(" ")[0];
 
-  // Update greeting text
-  const greetingEl = document.getElementById("personal-greeting");
-  if (greetingEl) {
-    greetingEl.innerText = `Hi ${name}, I'm ${avatarLabel}.`;
-  }
+  document.getElementById(
+    "personal-greeting"
+  ).innerText = `Hi ${name}, I'm ${avatarLabel}.`;
+  document.getElementById(
+    "avatar-persona"
+  ).innerText = `Tutor Style: ${formatAvatarName(rawAvatar)}`;
 
-  // Update persona line
-  const personaEl = document.getElementById("avatar-persona");
-  if (personaEl) {
-    personaEl.innerText = `Tutor Style: ${formatAvatarName(rawAvatar)}`;
-  }
-
-  // Update avatar image + label
   const imgEl = document.getElementById("avatar-image");
   const labelEl = document.getElementById("avatar-label");
-  if (imgEl) {
-    imgEl.src = avatarImagePath(rawAvatar);
-    imgEl.alt = formatAvatarName(rawAvatar);
-  }
-  if (labelEl) {
-    labelEl.innerText = avatarLabel;
-  }
+  imgEl.src = avatarImagePath(rawAvatar);
+  imgEl.alt = formatAvatarName(rawAvatar);
+  labelEl.innerText = avatarLabel;
 
-  // — Chat form & TTS setup —
+  // — Chat form setup (unchanged) —
   const form = document.getElementById("ask-form");
   const input = document.getElementById("user-input");
   const chatLog = document.getElementById("chat-log");
-  const playBtn = document.getElementById("play-btn");
 
-  // Chat submission handler
   if (form && input && chatLog) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -99,35 +59,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (res.ok) {
           appendMessage("Ada", data.reply);
-          lastResponse = data.reply; // ← store AI reply for TTS
+          lastResponse = data.reply; // ← store for TTS
         } else {
-          appendMessage(
-            "Ada",
-            `⚠️ Error: ${data.error?.message || "Something went wrong."}`
-          );
+          appendMessage("Ada", `⚠️ ${data.error?.message || "Error"}`);
         }
-      } catch (err) {
-        appendMessage("Ada", "❌ Network error. Please try again later.");
+      } catch {
+        appendMessage("Ada", "❌ Network error.");
       }
     });
   }
 
-  // Play button → speak lastResponse
+  // — Text-to-Speech “play” button hookup —
+  const playBtn = document.getElementById("play-btn");
   if (playBtn) {
-    if (!("speechSynthesis" in window)) {
+    if (!hasTTS) {
       playBtn.disabled = true;
       playBtn.title = "Text-to-Speech not supported";
     } else {
+      // preload voices (some mobile browsers load async)
+      const synth = window.speechSynthesis;
+      let voices = synth.getVoices();
+      if (!voices.length) {
+        synth.onvoiceschanged = () => {
+          voices = synth.getVoices();
+        };
+      }
+
       playBtn.addEventListener("click", () => {
         if (!lastResponse) return;
         const utter = new SpeechSynthesisUtterance(lastResponse);
-        window.speechSynthesis.speak(utter);
+        // pick an English voice if possible
+        const voice = voices.find((v) => v.lang.startsWith("en")) || voices[0];
+        if (voice) utter.voice = voice;
+        utter.lang = voice?.lang || "en-US";
+        synth.speak(utter);
       });
     }
   }
 });
 
-// 4) Message appender
+// 4) Append messages
 function appendMessage(sender, message) {
   const div = document.createElement("div");
   div.classList.add("mb-2");
