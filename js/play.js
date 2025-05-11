@@ -1,8 +1,5 @@
 // play.js — Ada’s Chat UI + Avatar Initialization
 
-// 0) Feature-detect TTS support
-const hasTTS = "speechSynthesis" in window;
-
 // 1) Keep track of the last AI reply for TTS
 let lastResponse = "";
 
