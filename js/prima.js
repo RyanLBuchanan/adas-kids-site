@@ -1,56 +1,124 @@
 // js/prima.js
-// Front-end logic to connect to your Nvidia Jetson Orin Nano server running a Phi-2 endpoint
+// Front-end logic to connect to your Jetson Nano + voice I/O
 
+// 1) Keep track of the last AI reply
+let lastResponse = "";
+
+// 2) Feature detection
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+const hasSTT = !!window.SpeechRecognition;
+const hasTTS = "speechSynthesis" in window;
+
+// 3) DOM ready → wire everything up
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("ask-form");
   const input = document.getElementById("user-input");
   const chatLog = document.getElementById("chat-log");
+  const micBtn = document.getElementById("mic-btn");
+  const playBtn = document.getElementById("play-btn");
 
-  // 🔧 Update this URL to point at your Jetson Orin Nano's Phi-2 server
-  const API_URL = "http://192.168.96.18:5000/api/chat"; // e.g. 'http://192.168.1.50:5000/api/chat'
+  // 🔧 Your backend endpoint
+  const API_URL = "http://192.168.96.18:5000/api/chat";
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const message = input.value.trim();
-    if (!message) return;
+  // — Speech Recognition setup —
+  let recognition;
+  if (hasSTT && micBtn) {
+    recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
 
-    appendMessage("user", message);
-    input.value = "";
+    recognition.onstart = () => micBtn.classList.add("bg-blue-700");
+    recognition.onend = () => micBtn.classList.remove("bg-blue-700");
+    recognition.onerror = (e) => console.error("STT error", e.error);
 
-    try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
+    recognition.onresult = (e) => {
+      input.value = e.results[0][0].transcript;
+    };
 
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const { reply } = await res.json();
-      appendMessage("assistant", reply);
-      speak(reply);
-    } catch (err) {
-      console.error("Chat error", err);
-      appendMessage("assistant", "⚠️ Something went wrong. Please try again.");
-    }
-  });
-
-  function appendMessage(sender, text) {
-    const msgEl = document.createElement("div");
-    msgEl.classList.add("mb-4", "py-2", "px-4", "rounded-lg", "max-w-[80%]");
-    if (sender === "user") {
-      msgEl.classList.add("self-end", "bg-purple-200", "text-purple-900");
-    } else {
-      msgEl.classList.add("self-start", "bg-purple-100", "text-purple-800");
-    }
-    msgEl.innerText = text;
-    chatLog.appendChild(msgEl);
-    chatLog.scrollTop = chatLog.scrollHeight;
+    micBtn.addEventListener("click", () => {
+      if (micBtn.classList.contains("bg-blue-700")) {
+        recognition.stop();
+      } else {
+        recognition.lang = "en-US"; // or tie to a dropdown
+        recognition.start();
+      }
+    });
+  } else if (micBtn) {
+    micBtn.disabled = true;
+    micBtn.title = "Speech-to-Text not supported";
   }
 
-  function speak(text) {
-    if (!window.speechSynthesis) return;
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = "en-US";
-    window.speechSynthesis.speak(utter);
+  // — Text-to-Speech play button —
+  if (playBtn) {
+    if (!hasTTS) {
+      playBtn.disabled = true;
+      playBtn.title = "Text-to-Speech not supported";
+    } else {
+      playBtn.addEventListener("click", () => {
+        if (!lastResponse) return;
+        const u = new SpeechSynthesisUtterance(lastResponse);
+        // u.lang = 'en-US'; // optional: tie to a language selector
+        window.speechSynthesis.speak(u);
+      });
+    }
+  }
+
+  // — Chat form submission —
+  if (form && input && chatLog) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const message = input.value.trim();
+      if (!message) return;
+
+      appendMessage("You", message);
+      input.value = "";
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message }),
+        });
+        const json = await res.json();
+
+        if (res.ok) {
+          lastResponse = json.reply; // ← store for TTS
+          appendMessage("Prima", json.reply);
+          // auto-speak the reply:
+          if (hasTTS) {
+            const u = new SpeechSynthesisUtterance(json.reply);
+            window.speechSynthesis.speak(u);
+          }
+        } else {
+          appendMessage("Prima", `⚠️ ${json.error || "Server error"}`);
+        }
+      } catch (err) {
+        console.error("Chat error", err);
+        appendMessage("Prima", "❌ Network or server error.");
+      }
+    });
   }
 });
+
+// 4) Helper to append chat bubbles
+function appendMessage(sender, text) {
+  const msgEl = document.createElement("div");
+  msgEl.classList.add(
+    "mb-4",
+    "py-2",
+    "px-4",
+    "rounded-lg",
+    "max-w-[80%]",
+    "flex"
+  );
+  if (sender === "You" || sender === "user") {
+    msgEl.classList.add("self-end", "bg-purple-200", "text-purple-900");
+  } else {
+    msgEl.classList.add("self-start", "bg-purple-100", "text-purple-800");
+  }
+  msgEl.innerText = text;
+  const chatLog = document.getElementById("chat-log");
+  chatLog.appendChild(msgEl);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
