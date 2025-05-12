@@ -18,6 +18,38 @@
         background: linear-gradient(to bottom right, #1e293b, #334155);
         color: #f1f5f9;
       }
+      /* make the selected value and the dropdown items legible */
+      #theme-select {
+        /* your dark background & visible text */
+        background-color: #1e293b !important;
+        color: #b0bec5 !important; /* or use #94a3b8 if you prefer */
+      }
+      /* the menu items when you open it */
+      #theme-select option {
+        background-color: #1e293b !important;
+        color: #b0bec5 !important;
+      }
+      /* Firefox on Windows needs this to style the selected item */
+      #theme-select:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #b0bec5;
+      }
+      /* make the selected value and the dropdown items legible */
+      #language-select {
+        /* your dark background & visible text */
+        background-color: #1e293b !important;
+        color: #b0bec5 !important; /* or use #94a3b8 if you prefer */
+      }
+      /* the menu items when you open it */
+      #language-select option {
+        background-color: #1e293b !important;
+        color: #b0bec5 !important;
+      }
+      /* Firefox on Windows needs this to style the selected item */
+      #language-select:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #b0bec5;
+      }
     </style>
     <script>
       window.onload = () => {
