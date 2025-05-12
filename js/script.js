@@ -159,12 +159,6 @@ function translatePage(lang) {
     const txt = translations[lang]?.[key];
     if (txt) el.innerText = txt;
   });
-  // in translatePage(lang):
-  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-    const key = el.getAttribute("data-i18n-placeholder");
-    const txt = translations[lang]?.[key];
-    if (txt) el.placeholder = txt;
-  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
