@@ -88,6 +88,43 @@ const translations = {
     createProf: "Create Profile →",
     // …any other keys…
   },
+  es: {
+    existingUser: "👤 Usuario existente",
+    username: "Nombre de usuario",
+    password: "Contraseña",
+    loginBtn: "Iniciar sesión →",
+    newUser: "✨ ¿Nuevo en Ada's Kids?",
+    createProf: "Crear perfil →",
+    preferredLang: "Idioma preferido",
+    // …etc.
+  },
+  fr: {
+    existingUser: "👤 Utilisateur existant",
+    username: "Nom d’utilisateur",
+    password: "Mot de passe",
+    loginBtn: "Se connecter →",
+    newUser: "✨ Nouveau sur Ada’s Kids ?",
+    createProf: "Créer un profil →",
+    preferredLang: "Langue préférée",
+  },
+  de: {
+    existingUser: "👤 Bestehender Benutzer",
+    username: "Benutzername",
+    password: "Passwort",
+    loginBtn: "Anmelden →",
+    newUser: "✨ Neu bei Ada’s Kids?",
+    createProf: "Profil erstellen →",
+    preferredLang: "Bevorzugte Sprache",
+  },
+  zh: {
+    existingUser: "👤 现有用户",
+    username: "用户名",
+    password: "密码",
+    loginBtn: "登录 →",
+    newUser: "✨ 新用户？",
+    createProf: "创建个人资料 →",
+    preferredLang: "首选语言",
+  },
   ar: {
     title: "مرحبًا بك في أطفال آدا",
     existing: "👤 مستخدم حالي",
@@ -98,7 +135,15 @@ const translations = {
     createProf: "إنشاء ملف التعريف →",
     // …add RTL-friendly Arabic strings here…
   },
-  // add “es”, “fr”, etc. as you go…
+  it: {
+    existingUser: "👤 Utente esistente",
+    username: "Nome utente",
+    password: "Password",
+    loginBtn: "Accedi →",
+    newUser: "✨ Nuovo in Ada’s Kids?",
+    createProf: "Crea profilo →",
+    preferredLang: "Lingua preferita",
+  },
 };
 
 function translatePage(lang) {
