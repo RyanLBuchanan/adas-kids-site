@@ -7,13 +7,13 @@ let lastResponse = "";
 function formatAvatarName(avatar) {
   switch (avatar) {
     case "carvis":
-      return "J.A.R.V.I.S. (Concise & Logical)";
-    case "chortana":
-      return "Cortana (Helpful & Friendly)";
+      return "C.A.R.V.I.S. (Concise & Logical)";
+    case "origami":
+      return "Origami (Helpful & Friendly)";
     case "calfred":
       return "Alfred (Wise & Supportive)";
     case "starship-computer":
-      return "Starfleet Computer (Precise & Formal)";
+      return "Starship Computer (Precise & Formal)";
     case "code-of-duty":
       return "Code of Duty (Tactical & Focused)";
     case "ada":
@@ -27,8 +27,8 @@ function avatarImagePath(avatar) {
   switch (avatar) {
     case "carvis":
       return "/assets/avatars/carvis.png";
-    case "chortana":
-      return "/assets/avatars/chortana.png";
+    case "origami":
+      return "/assets/avatars/origami.png";
     case "calfred":
       return "/assets/avatars/calfred.png";
     case "starship-computer":
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // — Avatar / Greeting setup —
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name") || "Student";
-  const rawAvatar = params.get("avatar") || "chortana";
+  const rawAvatar = params.get("avatar") || "origami";
   const avatarLabel = formatAvatarName(rawAvatar).split(" ")[0];
 
   // Update greeting text
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await res.json();
 
         if (res.ok) {
-          appendMessage("Ada", data.reply);
+          appendMessage(avatarLabel, data.reply);
           lastResponse = data.reply; // ← store AI reply for TTS
         } else {
           appendMessage(
