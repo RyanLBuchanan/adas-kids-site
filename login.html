@@ -265,14 +265,18 @@
 
         // 2️⃣ Helper to swap all [data-i18n] tags
         function translatePage(lang) {
-          // document <title>
-          const t = translations[lang]?.title;
-          if (t) document.title = t;
-
+          // 1) swap all [data-i18n] innerText
           document.querySelectorAll("[data-i18n]").forEach((el) => {
             const key = el.getAttribute("data-i18n");
             const txt = translations[lang]?.[key];
             if (txt) el.innerText = txt;
+          });
+
+          // 2) **new** — swap all [data-i18n-placeholder] placeholders
+          document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-placeholder");
+            const txt = translations[lang]?.[key];
+            if (txt) el.setAttribute("placeholder", txt);
           });
         }
 
