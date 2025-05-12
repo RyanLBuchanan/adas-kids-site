@@ -1,6 +1,11 @@
+// script.js
+
 // ✅ Animate on Scroll Init
 AOS.init();
 
+// —————————————————————————————————————————————————————
+// 1️⃣ Chat UI
+// —————————————————————————————————————————————————————
 const form = document.getElementById("ask-form");
 const userInput = document.getElementById("user-input");
 const chatLog = document.getElementById("chat-log");
@@ -17,12 +22,9 @@ if (form && userInput && chatLog) {
     try {
       const response = await fetch("/.netlify/functions/chat-ada", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),
       });
-
       const data = await response.json();
 
       if (response.ok) {
@@ -41,52 +43,58 @@ if (form && userInput && chatLog) {
 
 function appendMessage(sender, message) {
   const messageEl = document.createElement("div");
+  messageEl.classList.add("mb-2");
   messageEl.innerHTML = `<strong>${sender}:</strong> ${message}`;
   chatLog.appendChild(messageEl);
   chatLog.scrollTop = chatLog.scrollHeight;
 }
 
+// —————————————————————————————————————————————————————
+// 2️⃣ Carousel controls
+// —————————————————————————————————————————————————————
 const track = document.querySelector(".carousel-track");
 const slides = document.querySelectorAll(".carousel-track > div");
 let currentIndex = 0;
 
 function updateCarousel() {
+  if (!slides.length || !track) return;
   const slideWidth = slides[0].offsetWidth;
   track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
-document.getElementById("prevBtn").addEventListener("click", () => {
+document.getElementById("prevBtn")?.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   updateCarousel();
 });
 
-document.getElementById("nextBtn").addEventListener("click", () => {
+document.getElementById("nextBtn")?.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % slides.length;
   updateCarousel();
 });
 
-// 🍔 Mobile Menu Toggle
+// —————————————————————————————————————————————————————
+// 3️⃣ Mobile menu toggle
+// —————————————————————————————————————————————————————
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("mobile-menu-button");
-  const menu = document.getElementById("mobile-menu");
-
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+  document
+    .getElementById("mobile-menu-button")
+    ?.addEventListener("click", () => {
+      document.getElementById("mobile-menu")?.classList.toggle("hidden");
     });
-  }
 });
 
+// —————————————————————————————————————————————————————
+// 4️⃣ Internationalization (i18n)
+// —————————————————————————————————————————————————————
 const translations = {
   en: {
-    title: "Welcome to Ada's Kids",
-    existing: "👤 Existing User",
+    existingUser: "👤 Existing User",
     username: "Username",
     password: "Password",
     loginBtn: "Log In →",
     newUser: "✨ New to Ada's Kids?",
     createProf: "Create Profile →",
-    // …any other keys…
+    preferredLang: "Preferred Language",
   },
   es: {
     existingUser: "👤 Usuario existente",
@@ -96,7 +104,6 @@ const translations = {
     newUser: "✨ ¿Nuevo en Ada's Kids?",
     createProf: "Crear perfil →",
     preferredLang: "Idioma preferido",
-    // …etc.
   },
   fr: {
     existingUser: "👤 Utilisateur existant",
@@ -125,16 +132,6 @@ const translations = {
     createProf: "创建个人资料 →",
     preferredLang: "首选语言",
   },
-  ar: {
-    title: "مرحبًا بك في أطفال آدا",
-    existing: "👤 مستخدم حالي",
-    username: "اسم المستخدم",
-    password: "كلمة المرور",
-    loginBtn: "تسجيل الدخول →",
-    newUser: "✨ جديد في أطفال آدا؟",
-    createProf: "إنشاء ملف التعريف →",
-    // …add RTL-friendly Arabic strings here…
-  },
   it: {
     existingUser: "👤 Utente esistente",
     username: "Nome utente",
@@ -144,30 +141,51 @@ const translations = {
     createProf: "Crea profilo →",
     preferredLang: "Lingua preferita",
   },
+  ar: {
+    existingUser: "👤 مستخدم حالي",
+    username: "اسم المستخدم",
+    password: "كلمة المرور",
+    loginBtn: "تسجيل الدخول →",
+    newUser: "✨ جديد في أطفال آدا؟",
+    createProf: "إنشاء ملف التعريف →",
+    preferredLang: "اللغة المفضلة",
+  },
 };
 
 function translatePage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    if (translations[lang] && translations[lang][key]) {
-      el.innerText = translations[lang][key];
-    }
+    const txt = translations[lang]?.[key];
+    if (txt) el.innerText = txt;
   });
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(location.search);
   const lang = params.get("language") || "en";
-  const select = document.getElementById("language-select");
 
-  // render initial language
+  // sync all <select id="language-select">
+  document.querySelectorAll("#language-select").forEach((sel) => {
+    sel.value = lang;
+    // when changed, update URL, translate & keep hidden field in sync
+    sel.addEventListener("change", () => {
+      params.set("language", sel.value);
+      translatePage(sel.value);
+      history.replaceState(null, "", "?" + params.toString());
+
+      // keep hidden form field in sync
+      const hidden = document.getElementById("language-choice");
+      if (hidden) hidden.value = sel.value;
+    });
+  });
+
+  // initial render
   translatePage(lang);
-  select.value = lang;
 
-  // re-translate on change
-  select.addEventListener("change", () => {
-    params.set("language", select.value);
-    translatePage(select.value);
-    history.replaceState(null, "", "?" + params.toString());
+  // update all nav links to carry the lang param
+  document.querySelectorAll("nav a[href]").forEach((a) => {
+    const url = new URL(a.href, location.origin);
+    url.searchParams.set("language", lang);
+    a.href = url.toString();
   });
 });
