@@ -152,6 +152,7 @@ const translations = {
   },
 };
 
+// 2) translation helper
 function translatePage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -161,28 +162,45 @@ function translatePage(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // grab our query params
   const params = new URLSearchParams(location.search);
   const lang = params.get("language") || "en";
 
-  // sync all <select id="language-select">
-  document.querySelectorAll("#language-select").forEach((sel) => {
-    sel.value = lang;
-    // when changed, update URL, translate & keep hidden field in sync
-    sel.addEventListener("change", () => {
-      params.set("language", sel.value);
-      translatePage(sel.value);
+  // 3) sync the select dropdown
+  const select = document.getElementById("language-select");
+  if (select) {
+    select.value = lang;
+    select.addEventListener("change", () => {
+      const newLang = select.value;
+      params.set("language", newLang);
+
+      // update URL without reload
       history.replaceState(null, "", "?" + params.toString());
 
-      // keep hidden form field in sync
-      const hidden = document.getElementById("language-choice");
-      if (hidden) hidden.value = sel.value;
-    });
-  });
+      // re-translate everything
+      translatePage(newLang);
 
-  // initial render
+      // sync hidden field for your form
+      const hidden = document.getElementById("language-choice");
+      if (hidden) hidden.value = newLang;
+
+      // rewrite all nav links to preserve ?language=…
+      document.querySelectorAll("nav a[href]").forEach((a) => {
+        const url = new URL(a.href, location.origin);
+        url.searchParams.set("language", newLang);
+        a.href = url.toString();
+      });
+    });
+  }
+
+  // 4) initial translation pass
   translatePage(lang);
 
-  // update all nav links to carry the lang param
+  // 5) sync hidden input on initial load
+  const hidden = document.getElementById("language-choice");
+  if (hidden) hidden.value = lang;
+
+  // 6) also rewrite nav links right away
   document.querySelectorAll("nav a[href]").forEach((a) => {
     const url = new URL(a.href, location.origin);
     url.searchParams.set("language", lang);
