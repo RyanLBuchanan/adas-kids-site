@@ -54,15 +54,34 @@
           <span class="font-bold text-lg text-slate-200">Ada's Kids</span>
         </a>
         <nav class="hidden md:flex space-x-4">
-          <a href="index.html" class="text-slate-200 hover:text-white">Home</a>
-          <a href="index.html#vision" class="text-slate-200 hover:text-white"
+          <a
+            href="index.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="home"
+            >Home</a
+          >
+          <a
+            href="index.html#vision"
+            class="text-slate-200 hover:text-white"
+            data-i18n="vision"
             >Vision</a
           >
-          <a href="demo.html" class="text-slate-200 hover:text-white">Saudi</a>
-          <a href="reports.html" class="text-slate-200 hover:text-white"
+          <a
+            href="demo.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="demo"
+            >Saudi Demo</a
+          >
+          <a
+            href="reports.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="reports"
             >Reports</a
           >
-          <a href="settings.html" class="text-slate-200 hover:text-white"
+          <a
+            href="settings.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="settings"
             >Settings</a
           >
         </nav>
@@ -162,7 +181,7 @@
             <h2 data-i18n="newUser" class="text-2xl font-bold mb-4 text-white">
               ✨ New to Ada's Kids?
             </h2>
-            <p class="text-slate-300 mb-6">
+            <p data-i18n="newUserDesc" class="text-slate-300 mb-6">
               Create a profile to begin your personalized learning journey.
             </p>
           </div>
@@ -185,81 +204,156 @@
         // 1️⃣ Your translation table
         const translations = {
           en: {
-            title: "Welcome to Ada's Kids",
+            home: "Home",
+            vision: "Vision",
+            demo: "Saudi Demo",
+            reports: "Reports",
+            settings: "Settings",
+            talkAda: "Talk to Ada",
+
+            preferredLang: "Preferred Language",
             existingUser: "👤 Existing User",
             username: "Username",
             password: "Password",
             loginBtn: "Log In →",
+
             newUser: "✨ New to Ada's Kids?",
+            newUserDesc:
+              "Create a profile to begin your personalized learning journey.",
             createProf: "Create Profile →",
-            preferredLang: "Preferred Language",
-            namePlaceholder: "Your name",
+
+            placeholderName: "Your name",
           },
+
           es: {
-            title: "Bienvenido a Ada's Kids",
+            home: "Inicio",
+            vision: "Visión",
+            demo: "Demostración saudí",
+            reports: "Informes",
+            settings: "Configuración",
+            talkAda: "Hablar con Ada",
+
+            preferredLang: "Idioma preferido",
             existingUser: "👤 Usuario existente",
             username: "Nombre de usuario",
             password: "Contraseña",
             loginBtn: "Iniciar sesión →",
+
             newUser: "✨ ¿Nuevo en Ada's Kids?",
+            newUserDesc:
+              "Crea un perfil para comenzar tu viaje de aprendizaje personalizado.",
             createProf: "Crear perfil →",
-            preferredLang: "Idioma preferido",
-            namePlaceholder: "Tu nombre",
+
+            placeholderName: "Tu nombre",
           },
+
           fr: {
-            title: "Bienvenue sur Ada's Kids",
+            home: "Accueil",
+            vision: "Vision",
+            demo: "Démo saoudienne",
+            reports: "Rapports",
+            settings: "Paramètres",
+            talkAda: "Parler à Ada",
+
+            preferredLang: "Langue préférée",
             existingUser: "👤 Utilisateur existant",
             username: "Nom d’utilisateur",
             password: "Mot de passe",
             loginBtn: "Se connecter →",
+
             newUser: "✨ Nouveau sur Ada’s Kids ?",
+            newUserDesc:
+              "Créez un profil pour commencer votre parcours d'apprentissage personnalisé.",
             createProf: "Créer un profil →",
-            preferredLang: "Langue préférée",
-            namePlaceholder: "Votre nom",
+
+            placeholderName: "Votre nom",
           },
+
           de: {
-            title: "Willkommen bei Ada's Kids",
+            home: "Startseite",
+            vision: "Vision",
+            demo: "Saudi-Demo",
+            reports: "Berichte",
+            settings: "Einstellungen",
+            talkAda: "Mit Ada sprechen",
+
+            preferredLang: "Bevorzugte Sprache",
             existingUser: "👤 Bestehender Benutzer",
             username: "Benutzername",
             password: "Passwort",
             loginBtn: "Anmelden →",
+
             newUser: "✨ Neu bei Ada’s Kids?",
+            newUserDesc:
+              "Erstellen Sie ein Profil, um Ihre persönliche Lernreise zu starten.",
             createProf: "Profil erstellen →",
-            preferredLang: "Bevorzugte Sprache",
-            namePlaceholder: "Ihr Name",
+
+            placeholderName: "Ihr Name",
           },
+
           zh: {
-            title: "欢迎来到 Ada's Kids",
+            home: "首页",
+            vision: "愿景",
+            demo: "沙特演示",
+            reports: "报告",
+            settings: "设置",
+            talkAda: "与 Ada 对话",
+
+            preferredLang: "首选语言",
             existingUser: "👤 现有用户",
             username: "用户名",
             password: "密码",
             loginBtn: "登录 →",
+
             newUser: "✨ 新用户？",
+            newUserDesc: "创建个人资料，开始您的个性化学习之旅。",
             createProf: "创建个人资料 →",
-            preferredLang: "首选语言",
-            namePlaceholder: "您的姓名",
+
+            placeholderName: "您的名字",
           },
-          it: {
-            title: "Benvenuto in Ada's Kids",
-            existingUser: "👤 Utente esistente",
-            username: "Nome utente",
-            password: "Password",
-            loginBtn: "Accedi →",
-            newUser: "✨ Nuovo in Ada’s Kids?",
-            createProf: "Crea profilo →",
-            preferredLang: "Lingua preferita",
-            namePlaceholder: "Il tuo nome",
-          },
+
           ar: {
-            title: "مرحبًا بك في أطفال آدا",
+            home: "الرئيسية",
+            vision: "الرؤية",
+            demo: "عرض سعودي",
+            reports: "التقارير",
+            settings: "الإعدادات",
+            talkAda: "التحدث مع Ada",
+
+            preferredLang: "اللغة المفضلة",
             existingUser: "👤 مستخدم حالي",
             username: "اسم المستخدم",
             password: "كلمة المرور",
             loginBtn: "تسجيل الدخول →",
+
             newUser: "✨ جديد في أطفال آدا؟",
+            newUserDesc:
+              "أنشئ ملفًا شخصيًا لبدء رحلة التعلم المخصصة الخاصة بك.",
             createProf: "إنشاء ملف التعريف →",
-            preferredLang: "اللغة المفضلة",
-            namePlaceholder: "اسمك",
+
+            placeholderName: "اسمك",
+          },
+
+          it: {
+            home: "Home",
+            vision: "Visione",
+            demo: "Demo Saudita",
+            reports: "Report",
+            settings: "Impostazioni",
+            talkAda: "Parla con Ada",
+
+            preferredLang: "Lingua preferita",
+            existingUser: "👤 Utente esistente",
+            username: "Nome utente",
+            password: "Password",
+            loginBtn: "Accedi →",
+
+            newUser: "✨ Nuovo in Ada’s Kids?",
+            newUserDesc:
+              "Crea un profilo per iniziare il tuo percorso di apprendimento personalizzato.",
+            createProf: "Crea profilo →",
+
+            placeholderName: "Il tuo nome",
           },
         };
 
