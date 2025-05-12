@@ -73,21 +73,43 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
       >
         <!-- Left: Page title -->
-        <h1 class="text-2xl font-bold text-slate-100 flex-shrink-0">
+        <h1
+          class="text-2xl font-bold text-slate-100 flex-shrink-0"
+          data-i18n="settingsHeading"
+        >
           ⚙️ Settings
         </h1>
 
         <!-- Right: Nav links + CTA -->
         <nav class="hidden md:flex items-center space-x-4">
-          <a href="index.html" class="text-slate-200 hover:text-white">Home</a>
-          <a href="index.html#vision" class="text-slate-200 hover:text-white"
+          <a
+            href="index.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="home"
+            >Home</a
+          >
+          <a
+            href="index.html#vision"
+            class="text-slate-200 hover:text-white"
+            data-i18n="vision"
             >Vision</a
           >
-          <a href="demo.html" class="text-slate-200 hover:text-white">Demo</a>
-          <a href="reports.html" class="text-slate-200 hover:text-white"
+          <a
+            href="demo.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="demo"
+            >Saudi Demo</a
+          >
+          <a
+            href="reports.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="reports"
             >Reports</a
           >
-          <a href="settings.html" class="text-slate-200 hover:text-white"
+          <a
+            href="settings.html"
+            class="text-slate-200 hover:text-white"
+            data-i18n="settings"
             >Settings</a
           >
 
@@ -95,6 +117,7 @@
           <a
             href="login.html"
             class="ml-6 bg-pink-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
+            data-i18n="talkAda"
           >
             Talk to Ada
           </a>
@@ -111,7 +134,10 @@
     </header>
 
     <main class="max-w-3xl mx-auto px-4 py-10">
-      <h2 class="text-xl font-semibold mb-6 text-slate-100">
+      <h2
+        class="text-xl font-semibold mb-6 text-slate-100"
+        data-i18n="customizeHeading"
+      >
         Customize Your Experience
       </h2>
       <form class="space-y-6">
@@ -120,15 +146,18 @@
           <label
             class="block font-semibold text-slate-200 mb-2"
             for="theme-select"
+            data-i18n="colorTheme"
             >Color Theme</label
           >
           <select
             id="theme-select"
             class="theme-select w-full p-3 border border-slate-600 bg-slate-800 text-slate-300 rounded-lg"
           >
-            <option>Dark (default)</option>
-            <option>Light</option>
-            <option>Contrast Mode</option>
+            <option value="dark" data-i18n="themeDark">Dark (default)</option>
+            <option value="light" data-i18n="themeLight">Light</option>
+            <option value="contrast" data-i18n="themeContrast">
+              Contrast Mode
+            </option>
           </select>
         </div>
 
@@ -137,6 +166,7 @@
           <label
             class="block font-semibold text-slate-200 mb-2"
             for="language-select"
+            data-i18n="languageLabel"
             >Language</label
           >
           <select
@@ -158,20 +188,26 @@
 
         <!-- Voice Output -->
         <div>
-          <label class="block font-semibold text-slate-200 mb-2"
+          <label
+            class="block font-semibold text-slate-200 mb-2"
+            data-i18n="voiceOutputLabel"
             >Enable Voice Output</label
           >
           <input type="checkbox" class="mr-2 align-middle" />
-          <span class="text-slate-300">Ada will read messages aloud</span>
+          <span class="text-slate-300" data-i18n="voiceOutputDesc"
+            >Ada will read messages aloud</span
+          >
         </div>
 
         <!-- Notifications -->
         <div>
-          <label class="block font-semibold text-slate-200 mb-2"
+          <label
+            class="block font-semibold text-slate-200 mb-2"
+            data-i18n="emailNotifLabel"
             >Email Notifications</label
           >
           <input type="checkbox" class="mr-2 align-middle" />
-          <span class="text-slate-300"
+          <span class="text-slate-300" data-i18n="emailNotifDesc"
             >Get updates about learning progress</span
           >
         </div>
@@ -180,12 +216,321 @@
           <button
             type="submit"
             class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold shadow hover:bg-blue-700"
+            data-i18n="saveSettings"
           >
             Save Settings
           </button>
         </div>
       </form>
     </main>
+    <!-- include your translation & i18n script last -->
+    <script src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1️⃣ Your translation table
+        const translations = {
+          en: {
+            home: "Home",
+            vision: "Vision",
+            demo: "Saudi Demo",
+            reports: "Reports",
+            settings: "Settings",
+            talkAda: "Talk to Ada",
+
+            preferredLang: "Preferred Language",
+            existingUser: "👤 Existing User",
+            username: "Username",
+            password: "Password",
+            loginBtn: "Log In →",
+
+            newUser: "✨ New to Ada's Kids?",
+            newUserDesc:
+              "Create a profile to begin your personalized learning journey.",
+            createProf: "Create Profile →",
+
+            placeholder: "Your name",
+            selectLang: "Select a language",
+            settingsTitle: "Settings | Ada's Kids",
+            settingsHeading: "⚙️ Settings",
+            customizeHeading: "Customize Your Experience",
+            colorTheme: "Color Theme",
+            themeDark: "Dark (default)",
+            themeLight: "Light",
+            themeContrast: "Contrast Mode",
+            languageLabel: "Language",
+            voiceOutputLabel: "Enable Voice Output",
+            voiceOutputDesc: "Ada will read messages aloud",
+            emailNotifLabel: "Email Notifications",
+            emailNotifDesc: "Get updates about learning progress",
+            saveSettings: "Save Settings",
+          },
+
+          es: {
+            home: "Inicio",
+            vision: "Visión",
+            demo: "Demostración saudí",
+            reports: "Informes",
+            settings: "Configuración",
+            talkAda: "Hablar con Ada",
+
+            preferredLang: "Idioma preferido",
+            existingUser: "👤 Usuario existente",
+            username: "Nombre de usuario",
+            password: "Contraseña",
+            loginBtn: "Iniciar sesión →",
+
+            newUser: "✨ ¿Nuevo en Ada's Kids?",
+            newUserDesc:
+              "Crea un perfil para comenzar tu viaje de aprendizaje personalizado.",
+            createProf: "Crear perfil →",
+
+            placeholder: "Tu nombre",
+            settingsTitle: "Configuración | Ada's Kids",
+            settingsHeading: "⚙️ Configuración",
+            customizeHeading: "Personaliza tu experiencia",
+            colorTheme: "Tema de color",
+            themeDark: "Oscuro (predeterminado)",
+            themeLight: "Claro",
+            themeContrast: "Modo de contraste",
+            languageLabel: "Idioma",
+            selectLang: "Selecciona un idioma",
+            voiceOutputLabel: "Habilitar salida de voz",
+            voiceOutputDesc: "Ada leerá los mensajes en voz alta",
+            emailNotifLabel: "Notificaciones por correo",
+            emailNotifDesc:
+              "Recibir actualizaciones sobre el progreso de aprendizaje",
+            saveSettings: "Guardar ajustes",
+          },
+
+          fr: {
+            home: "Accueil",
+            vision: "Vision",
+            demo: "Démo saoudienne",
+            reports: "Rapports",
+            settings: "Paramètres",
+            talkAda: "Parler à Ada",
+
+            preferredLang: "Langue préférée",
+            existingUser: "👤 Utilisateur existant",
+            username: "Nom d’utilisateur",
+            password: "Mot de passe",
+            loginBtn: "Se connecter →",
+
+            newUser: "✨ Nouveau sur Ada’s Kids ?",
+            newUserDesc:
+              "Créez un profil pour commencer votre parcours d'apprentissage personnalisé.",
+            createProf: "Créer un profil →",
+
+            placeholder: "Votre nom",
+            settingsTitle: "Paramètres | Ada’s Kids",
+            settingsHeading: "⚙️ Paramètres",
+            customizeHeading: "Personnalisez votre expérience",
+            colorTheme: "Thème de couleur",
+            themeDark: "Sombre (par défaut)",
+            themeLight: "Clair",
+            themeContrast: "Mode contraste",
+            languageLabel: "Langue",
+            selectLang: "Sélectionnez une langue",
+            voiceOutputLabel: "Activer la synthèse vocale",
+            voiceOutputDesc: "Ada lira les messages à voix haute",
+            emailNotifLabel: "Notifications par e-mail",
+            emailNotifDesc: "Recevoir des mises à jour sur le progrès",
+            saveSettings: "Enregistrer",
+          },
+
+          de: {
+            home: "Startseite",
+            vision: "Vision",
+            demo: "Saudi-Demo",
+            reports: "Berichte",
+            settings: "Einstellungen",
+            talkAda: "Mit Ada sprechen",
+
+            preferredLang: "Bevorzugte Sprache",
+            existingUser: "👤 Bestehender Benutzer",
+            username: "Benutzername",
+            password: "Passwort",
+            loginBtn: "Anmelden →",
+
+            newUser: "✨ Neu bei Ada’s Kids?",
+            newUserDesc:
+              "Erstellen Sie ein Profil, um Ihre persönliche Lernreise zu starten.",
+            createProf: "Profil erstellen →",
+
+            placeholder: "Ihr Name",
+            settingsTitle: "Einstellungen | Ada’s Kids",
+            settingsHeading: "⚙️ Einstellungen",
+            customizeHeading: "Erweitern Sie Ihre Erfahrung",
+            colorTheme: "Farbthema",
+            themeDark: "Dunkel (Standard)",
+            themeLight: "Hell",
+            themeContrast: "Kontrastmodus",
+            languageLabel: "Sprache",
+            selectLang: "Wählen Sie eine Sprache",
+            voiceOutputLabel: "Sprachausgabe aktivieren",
+            voiceOutputDesc: "Ada liest Nachrichten laut vor",
+            emailNotifLabel: "E-Mail-Benachrichtigungen",
+            emailNotifDesc: "Erhalte Updates zum Lernfortschritt",
+            saveSettings: "Speichern",
+          },
+
+          zh: {
+            home: "首页",
+            vision: "愿景",
+            demo: "沙特演示",
+            reports: "报告",
+            settings: "设置",
+            talkAda: "与 Ada 对话",
+
+            preferredLang: "首选语言",
+            existingUser: "👤 现有用户",
+            username: "用户名",
+            password: "密码",
+            loginBtn: "登录 →",
+
+            newUser: "✨ 新用户？",
+            newUserDesc: "创建个人资料，开始您的个性化学习之旅。",
+            createProf: "创建个人资料 →",
+
+            placeholder: "您的名字",
+            settingsTitle: "设置 | Ada’s Kids",
+            settingsHeading: "⚙️ 设置",
+            customizeHeading: "自定义您的体验",
+            colorTheme: "配色主题",
+            themeDark: "深色（默认）",
+            themeLight: "浅色",
+            themeContrast: "高对比模式",
+            languageLabel: "语言",
+            selectLang: "请选择语言",
+            voiceOutputLabel: "启用语音输出",
+            voiceOutputDesc: "Ada 会朗读消息",
+            emailNotifLabel: "电子邮件通知",
+            emailNotifDesc: "获取学习进度更新",
+            saveSettings: "保存设置",
+          },
+
+          ar: {
+            home: "الرئيسية",
+            vision: "الرؤية",
+            demo: "عرض سعودي",
+            reports: "التقارير",
+            settings: "الإعدادات",
+            talkAda: "التحدث مع Ada",
+
+            preferredLang: "اللغة المفضلة",
+            existingUser: "👤 مستخدم حالي",
+            username: "اسم المستخدم",
+            password: "كلمة المرور",
+            loginBtn: "تسجيل الدخول →",
+
+            newUser: "✨ جديد في أطفال آدا؟",
+            newUserDesc:
+              "أنشئ ملفًا شخصيًا لبدء رحلة التعلم المخصصة الخاصة بك.",
+            createProf: "إنشاء ملف التعريف →",
+
+            placeholder: "اسمك",
+            settingsTitle: "الإعدادات | أطفال آدا",
+            settingsHeading: "⚙️ الإعدادات",
+            customizeHeading: "خصص تجربتك",
+            colorTheme: "سمة اللون",
+            themeDark: "داكن (افتراضي)",
+            themeLight: "فاتح",
+            themeContrast: "وضع التباين",
+            languageLabel: "اللغة",
+            selectLang: "اختر لغة",
+            voiceOutputLabel: "تمكين إخراج الصوت",
+            voiceOutputDesc: "ستقرأ Ada الرسائل بصوت عالٍ",
+            emailNotifLabel: "إشعارات البريد الإلكتروني",
+            emailNotifDesc: "تلقي تحديثات حول التقدم",
+            saveSettings: "حفظ الإعدادات",
+          },
+
+          it: {
+            home: "Home",
+            vision: "Visione",
+            demo: "Demo Saudita",
+            reports: "Report",
+            settings: "Impostazioni",
+            talkAda: "Parla con Ada",
+
+            preferredLang: "Lingua preferita",
+            existingUser: "👤 Utente esistente",
+            username: "Nome utente",
+            password: "Password",
+            loginBtn: "Accedi →",
+
+            newUser: "✨ Nuovo in Ada’s Kids?",
+            newUserDesc:
+              "Crea un profilo per iniziare il tuo percorso di apprendimento personalizzato.",
+            createProf: "Crea profilo →",
+
+            placeholder: "Il tuo nome",
+            settingsTitle: "Impostazioni | Ada’s Kids",
+            settingsHeading: "⚙️ Impostazioni",
+            customizeHeading: "Personalizza la tua esperienza",
+            colorTheme: "Tema colore",
+            themeDark: "Scuro (predefinito)",
+            themeLight: "Chiaro",
+            themeContrast: "Modalità contrasto",
+            languageLabel: "Lingua",
+            selectLang: "Seleziona una lingua",
+            voiceOutputLabel: "Abilita output vocale",
+            voiceOutputDesc: "Ada leggerà i messaggi ad alta voce",
+            emailNotifLabel: "Notifiche email",
+            emailNotifDesc: "Ricevi aggiornamenti sul progresso",
+            saveSettings: "Salva impostazioni",
+          },
+        };
+
+        // 2️⃣ Helper to swap all [data-i18n] tags
+        function translatePage(lang) {
+          // 1) swap all [data-i18n] innerText
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            const txt = translations[lang]?.[key];
+            if (txt) el.innerText = txt;
+          });
+
+          // 2) **new** — swap all [data-i18n-placeholder] placeholders
+          document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-placeholder");
+            const txt = translations[lang]?.[key];
+            if (txt) el.setAttribute("placeholder", txt);
+          });
+        }
+
+        // 3️⃣ Read the current ?language=… or default
+        const params = new URLSearchParams(location.search);
+        let lang = params.get("language");
+        if (!translations[lang]) lang = "en";
+
+        // 4️⃣ Initial render
+        translatePage(lang);
+
+        // 5️⃣ Wire up the <select id="language-select">
+        const sel = document.getElementById("language-select");
+        if (sel) {
+          sel.value = lang;
+          sel.addEventListener("change", () => {
+            lang = sel.value;
+            params.set("language", lang);
+            translatePage(lang);
+            history.replaceState(null, "", "?" + params.toString());
+
+            // keep hidden login field in sync
+            const hidden = document.getElementById("language-choice");
+            if (hidden) hidden.value = lang;
+
+            // update all nav links so they carry ?language=…
+            document.querySelectorAll("header nav a[href]").forEach((a) => {
+              const url = new URL(a.href, location.origin);
+              url.searchParams.set("language", lang);
+              a.href = url.toString();
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
 
