@@ -389,6 +389,21 @@
         }
       });
     </script>
+    <!-- then this inline bootstrapper -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(location.search);
+        // 1) figure out which lang we're in
+        let lang = params.get("language") || "en";
+        // 2) stick it in the hidden field so avatar.html also sees it
+        const hiddenLang = document.getElementById("lang-choice");
+        if (hiddenLang) hiddenLang.value = lang;
+        // 3) translate all [data-i18n] and [data-i18n-placeholder]
+        if (typeof translatePage === "function") {
+          translatePage(lang);
+        }
+      });
+    </script>
   </body>
   </body>
 </html>
