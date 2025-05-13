@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <img
         src="/assets/diagrams/integral-diagram.png"
         alt="Diagram of x squared area"
-        class="w-full rounded-lg shadow-lg"
-      />
+        class="w-4/5 sm:w-2/3 md:w-1/2 lg:w-1/3 mx-auto rounded-lg shadow-lg"
+        />
     </div>
 
     <div class="callout">
