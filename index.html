@@ -33,16 +33,17 @@
           />
           <span class="font-bold text-lg">Ada's Kids</span>
         </a>
+
+        <!-- Desktop Links -->
         <div id="nav-links" class="hidden md:flex space-x-6 items-center">
           <a href="#home" class="hover:text-yellow-500">Home</a>
           <a
-            class="nav-link"
             href="https://adas-kids-ai-powered-per-hzczy2x.gamma.site/"
             target="_blank"
             rel="noopener"
+            class="hover:text-yellow-500"
+            >Slide Deck</a
           >
-            Slide Deck
-          </a>
           <a href="#vision" class="hover:text-yellow-500">Hear Our Vision</a>
           <a href="#testimonials" class="hover:text-yellow-500">Testimonials</a>
           <a href="demo.html" class="hover:text-yellow-500">Saudi</a>
@@ -52,12 +53,9 @@
             class="ml-4 bg-pink-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
             >Talk to Ada</a
           >
-          <!-- <a
-            href="prima.html"
-            class="ml-4 bg-purple-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-purple-600 transition"
-            >Talk to Prima</a
-          > -->
         </div>
+
+        <!-- Mobile Toggle -->
         <button
           id="mobile-menu-button"
           class="md:hidden text-gray-700 focus:outline-none"
@@ -65,16 +63,20 @@
           ☰
         </button>
       </nav>
-      <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-90">
+
+      <!-- Mobile Menu (initially hidden) -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white bg-opacity-90 pt-16"
+      >
         <a href="#home" class="block py-2 px-4 border-b">Home</a>
         <a
-          class="nav-link"
           href="https://adas-kids-ai-powered-per-hzczy2x.gamma.site/"
           target="_blank"
           rel="noopener"
+          class="block py-2 px-4 border-b"
+          >Slide Deck</a
         >
-          Slide Deck
-        </a>
         <a href="#vision" class="block py-2 px-4 border-b">Hear Our Vision</a>
         <a href="#testimonials" class="block py-2 px-4 border-b"
           >Testimonials</a
@@ -86,13 +88,17 @@
           class="block py-2 px-4 font-semibold bg-pink-500 text-white hover:bg-pink-600"
           >Talk to Ada</a
         >
-        <a
-          href="prima.html"
-          class="block py-2 px-4 font-semibold bg-purple-500 text-white hover:bg-purple-600"
-          >Talk to Prima</a
-        >
       </div>
     </header>
+
+    <script>
+      // toggle mobile menu
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", () => {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
 
     <main class="pt-24">
       <!-- Home & Demo Combined -->
