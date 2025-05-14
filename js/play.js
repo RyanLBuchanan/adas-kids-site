@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name") || "Student";
   const rawAvatar = params.get("avatar") || "origami";
-  const avatarLabel = formatAvatarName(rawAvatar).split(" ")[0];
+  const avatarLabel = formatAvatarName(rawAvatar);
 
   // Update greeting text
   const greetingEl = document.getElementById("personal-greeting");
