@@ -20,7 +20,7 @@
     <style>
       body {
         font-family: "Quicksand", sans-serif;
-        background: linear-gradient(to bottom right, #1e293b, #334155);
+        background: linear-gradient(to bottom right, #1d8348, #145a32);
         color: #f1f5f9;
       }
       input,
@@ -45,8 +45,15 @@
   <body class="min-h-screen">
     <!-- Header -->
     <header
-      class="text-center py-6 shadow bg-white bg-opacity-10 backdrop-blur"
+      class="relative text-center py-6 shadow bg-white bg-opacity-10 backdrop-blur"
     >
+      <!-- Saudi Vision 2030 Logo Placeholder -->
+      <img
+        src="/assets/vision2030-placeholder.png"
+        alt="Saudi Vision 2030 Logo"
+        class="absolute top-4 left-4 h-12"
+      />
+
       <h1 id="personal-greeting" class="text-3xl font-bold text-white">
         Hi, I'm Ada.
       </h1>
@@ -76,7 +83,6 @@
 
         <!-- Chat Input Form -->
         <form id="ask-form" class="flex space-x-2 items-center">
-          <!-- 1. Mic button -->
           <button
             type="button"
             id="mic-btn"
@@ -103,7 +109,6 @@
             🔊
           </button>
 
-          <!-- 4. Send button -->
           <button
             type="submit"
             class="bg-pink-500 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-pink-600"
@@ -113,15 +118,37 @@
         </form>
       </div>
 
-      <!-- Right: Avatar Placeholder -->
-      <div class="hidden lg:flex flex-col items-center w-48">
+      <!-- Right: Avatar Section -->
+      <div class="hidden lg:flex flex-col items-center w-48 space-y-4">
         <img
           id="avatar-image"
-          class="avatar-img-large mb-4"
+          class="avatar-img-large"
           src="/assets/avatars/ada.png"
           alt="Ada Avatar"
         />
         <p id="avatar-label" class="text-slate-300 text-center">Ada</p>
+
+        <!-- Additional Avatars -->
+        <img
+          src="/assets/avatars/saudi-businessman.png"
+          alt="Saudi Businessman"
+          class="avatar-img-large"
+        />
+        <p class="text-slate-300 text-center">Businessman</p>
+
+        <img
+          src="/assets/avatars/saudi-warrior.png"
+          alt="Saudi Warrior"
+          class="avatar-img-large"
+        />
+        <p class="text-slate-300 text-center">Warrior</p>
+
+        <img
+          src="/assets/avatars/saudi-doctor.png"
+          alt="Saudi Doctor"
+          class="avatar-img-large"
+        />
+        <p class="text-slate-300 text-center">Doctor</p>
       </div>
     </main>
 
