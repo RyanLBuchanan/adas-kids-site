@@ -140,3 +140,12 @@ body.dark-theme select.theme-select,
 body.dark-theme select.theme-select option {
   color: #94a3b8 !important;
 }
+
+.callout {
+  background-color: #1e40af; /* Tailwind's bg-blue-800 */
+  border-left: 4px solid #3b82f6; /* Tailwind's border-blue-500 */
+  padding: 1rem; /* Tailwind's p-4 */
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
