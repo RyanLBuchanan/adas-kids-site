@@ -6,16 +6,16 @@ let lastResponse = "";
 // 2) Avatar helpers
 function formatAvatarName(avatar) {
   switch (avatar) {
-    case "carvis":
-      return "C.A.R.V.I.S. (Concise & Logical)";
-    case "origami":
-      return "Origami (Helpful & Friendly)";
-    case "calfred":
-      return "Alfred (Wise & Supportive)";
-    case "starship-computer":
-      return "Starship Computer (Precise & Formal)";
+    case "saudi-businessman":
+      return "Saudi Businessman (Confident & Professional)";
+    case "saudi-doctor":
+      return "Saudi Doctor (Smart & Empathetic)";
+    case "saudi-warrior":
+      return "Saudi Warrior (Disciplined & Tactical)";
     case "code-of-duty":
       return "Code of Duty (Tactical & Focused)";
+    case "origami":
+      return "Origami (Friendly & Curious)";
     case "ada":
       return "Ada (Empathetic & Inspiring)";
     default:
