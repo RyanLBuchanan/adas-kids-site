@@ -7,13 +7,13 @@ let lastResponse = "";
 function formatAvatarName(avatar) {
   switch (avatar) {
     case "saudi-businessman":
-      return "Saudi Businessman (Confident & Professional)";
+      return "SaudiBusinessman (Confident & Professional)";
     case "saudi-doctor":
-      return "Saudi Doctor (Smart & Empathetic)";
+      return "SaudiDoctor (Smart & Empathetic)";
     case "saudi-warrior":
-      return "Saudi Warrior (Disciplined & Tactical)";
+      return "SaudiWarrior (Disciplined & Tactical)";
     case "code-of-duty":
-      return "Code of Duty (Tactical & Focused)";
+      return "CodeOfDuty (Tactical & Focused)";
     case "origami":
       return "Origami (Friendly & Curious)";
     case "ada":
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name") || "Student";
   const rawAvatar = params.get("avatar") || "origami";
-  const avatarLabel = formatAvatarName(rawAvatar);
+  const avatarLabel = formatAvatarName(rawAvatar).split(" ")[0];
 
   // Update greeting text
   const greetingEl = document.getElementById("personal-greeting");
