@@ -16,7 +16,7 @@
     <style>
       body {
         font-family: "Quicksand", sans-serif;
-        background: linear-gradient(to bottom right, #1e293b, #334155);
+        background: linear-gradient(to bottom right, #1d8348, #145a32);
         color: #f1f5f9;
       }
       label {
@@ -46,93 +46,102 @@
       };
     </script>
   </head>
-  <body class="min-h-screen flex items-center justify-center px-4">
-    <div class="w-full max-w-3xl">
+  <body class="min-h-screen px-4 pt-4 pb-12">
+    <!-- Saudi 2030 Logo -->
+    <img
+      src="/assets/vision2030-logo.png"
+      alt="Saudi Vision 2030 Logo"
+      class="h-12 mb-4"
+    />
+
+    <div class="w-full max-w-4xl mx-auto">
       <h1 class="text-3xl font-bold text-center mb-6">🧠 Choose Your Tutor</h1>
-      <p class="text-center text-slate-400 mb-8">
+      <p class="text-center text-slate-300 mb-8">
         Select the personality style you'd like to guide you through this
         session.
       </p>
+
       <form action="play.html" method="GET" class="space-y-6">
         <input type="hidden" id="name-choice" name="name" />
         <input type="hidden" id="age-choice" name="age" />
         <input type="hidden" id="language-choice" name="language" />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Carvis -->
+          <!-- Saudi Businessman -->
           <label
             class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
           >
             <input
               type="radio"
               name="avatar"
-              value="carvis"
+              value="saudi-businessman"
               class="hidden"
               required
             />
             <img
-              src="assets/avatars/carvis.png"
-              alt="Carvis"
+              src="assets/avatars/saudi-businessman.png"
+              alt="Saudi Businessman"
               class="avatar-img"
             />
-            <h2 class="font-semibold mb-1 text-lg">Carvis</h2>
-            <p class="text-sm text-slate-400 text-center">
-              Certainly Another Really Very Intelligent System — concise &
-              logical.
+            <h2 class="font-semibold mb-1 text-lg">Saudi Businessman</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Confident & Professional — experienced mentor in traditional
+              attire.
             </p>
           </label>
 
-          <!-- Origami -->
-          <label
-            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
-          >
-            <input type="radio" name="avatar" value="origami" class="hidden" />
-            <img
-              src="assets/avatars/origami.png"
-              alt="Origami"
-              class="avatar-img"
-            />
-            <h2 class="font-semibold mb-1 text-lg">Origami</h2>
-            <p class="text-sm text-slate-400 text-center">
-              Helpful & Friendly — warm, knowledgeable, and focused on your
-              success.
-            </p>
-          </label>
-
-          <!-- Calfred -->
-          <label
-            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
-          >
-            <input type="radio" name="avatar" value="calfred" class="hidden" />
-            <img
-              src="assets/avatars/calfred.png"
-              alt="Calfred"
-              class="avatar-img"
-            />
-            <h2 class="font-semibold mb-1 text-lg">Calfred</h2>
-            <p class="text-sm text-slate-400 text-center">
-              Wise & Supportive — gentle guidance with calm confidence.
-            </p>
-          </label>
-
-          <!-- Starship Computer -->
+          <!-- Saudi Doctor -->
           <label
             class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
           >
             <input
               type="radio"
               name="avatar"
-              value="starship-computer"
+              value="saudi-doctor"
               class="hidden"
             />
             <img
-              src="assets/avatars/starship.png"
-              alt="Starship Computer"
+              src="assets/avatars/saudi-doctor.png"
+              alt="Saudi Female Doctor"
               class="avatar-img"
             />
-            <h2 class="font-semibold mb-1 text-lg">Starship Computer</h2>
-            <p class="text-sm text-slate-400 text-center">
-              Precise & Formal — neutral, accurate, and mission-focused.
+            <h2 class="font-semibold mb-1 text-lg">Saudi Doctor</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Smart & Empathetic — science-driven and student-focused.
+            </p>
+          </label>
+
+          <!-- Saudi Warrior -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="saudi-warrior"
+              class="hidden"
+            />
+            <img
+              src="assets/avatars/saudi-warrior.png"
+              alt="Saudi Warrior"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Saudi Warrior</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Disciplined & Tactical — historical strength with focused purpose.
+            </p>
+          </label>
+
+          <!-- Ada -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input type="radio" name="avatar" value="ada" class="hidden" />
+            <img src="assets/avatars/ada.png" alt="Ada" class="avatar-img" />
+            <h2 class="font-semibold mb-1 text-lg">Ada</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Empathetic & Inspiring — supportive guide that grows and learns
+              with you.
             </p>
           </label>
 
@@ -152,27 +161,30 @@
               class="avatar-img"
             />
             <h2 class="font-semibold mb-1 text-lg">Code of Duty</h2>
-            <p class="text-sm text-slate-400 text-center">
+            <p class="text-sm text-slate-300 text-center">
               Tactical & Focused — mission-driven style for gamers and
               strategists.
             </p>
           </label>
 
-          <!-- Ada -->
+          <!-- Origami -->
           <label
             class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
           >
-            <input type="radio" name="avatar" value="ada" class="hidden" />
-            <img src="assets/avatars/ada.png" alt="Ada" class="avatar-img" />
-            <h2 class="font-semibold mb-1 text-lg">Ada</h2>
-            <p class="text-sm text-slate-400 text-center">
-              Empathetic & Inspiring — supportive guide that grows and learns
-              with you.
+            <input type="radio" name="avatar" value="origami" class="hidden" />
+            <img
+              src="assets/avatars/origami.png"
+              alt="Origami"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Origami</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Friendly & Curious — your creative thinking companion.
             </p>
           </label>
         </div>
 
-        <div class="text-center pt-4">
+        <div class="text-center pt-6">
           <button
             type="submit"
             class="bg-pink-500 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-pink-600"
