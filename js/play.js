@@ -25,14 +25,14 @@ function formatAvatarName(avatar) {
 
 function avatarImagePath(avatar) {
   switch (avatar) {
-    case "carvis":
-      return "/assets/avatars/carvis.png";
+    case "saudi-businessman":
+      return "/assets/avatars/saudi-businessman.png";
     case "origami":
       return "/assets/avatars/origami.png";
-    case "calfred":
-      return "/assets/avatars/calfred.png";
-    case "starship-computer":
-      return "/assets/avatars/starship.png";
+    case "saudi-doctor":
+      return "/assets/avatars/saudi-doctor.png";
+    case "saudi-warrior":
+      return "/assets/avatars/saudi-warrior.png";
     case "code-of-duty":
       return "/assets/avatars/code-of-duty.png";
     case "ada":
