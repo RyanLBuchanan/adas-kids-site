@@ -16,20 +16,38 @@
     <style>
       body {
         font-family: "Quicksand", sans-serif;
-        background: linear-gradient(to bottom right, #1e293b, #334155);
+        background: linear-gradient(
+          to bottom right,
+          #1d8348,
+          #145a32
+        ); /* Muted Saudi green */
         color: #f1f5f9;
       }
+      input,
       select {
         color: #94a3b8;
-        background-color: #1e293b;
+        background-color: #0f5132;
       }
       select option {
         color: #94a3b8;
-        background-color: #1e293b;
+        background-color: #0f5132;
+      }
+      .avatar-img-large {
+        width: 12rem;
+        height: 12rem;
+        object-fit: cover;
+        border-radius: 9999px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       }
     </style>
   </head>
   <body class="min-h-screen flex items-center justify-center px-4">
+    <!-- Saudi Vision 2030 Logo Placeholder -->
+    <img
+      src="/assets/vision2030-logo.png"
+      alt="Saudi Vision 2030 Logo"
+      class="absolute top-4 left-4 h-12"
+    />
     <div
       class="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg w-full max-w-md border border-slate-600"
     >
