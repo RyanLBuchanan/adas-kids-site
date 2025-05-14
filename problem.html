@@ -59,7 +59,7 @@
 
       <div class="mt-6 text-center">
         <a
-          href="play.html"
+          id="back-to-chat"
           class="inline-block bg-pink-500 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-pink-600"
         >
           ← Back to Chat
@@ -73,5 +73,18 @@
 
     <!-- Walkthrough logic -->
     <script src="js/walkthrough.js"></script>
+    <script>
+      // Preserve avatar and name from query string
+      const params = new URLSearchParams(window.location.search);
+      const avatar = params.get("avatar");
+      const name = params.get("name");
+
+      const backLink = document.getElementById("back-to-chat");
+      if (backLink && avatar && name) {
+        backLink.href = `play.html?avatar=${avatar}&name=${encodeURIComponent(
+          name
+        )}`;
+      }
+    </script>
   </body>
 </html>
