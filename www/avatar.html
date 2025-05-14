@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Your Tutor</title>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+        background: linear-gradient(to bottom right, #1d8348, #145a32);
+        color: #f1f5f9;
+      }
+      label {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      label:hover {
+        background-color: rgba(59, 130, 246, 0.1);
+      }
+      input[type="radio"]:checked + * {
+        border: 2px solid #f472b6;
+      }
+      .avatar-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        const params = new URLSearchParams(window.location.search);
+        ["name", "age", "language"].forEach((k) => {
+          const v = params.get(k);
+          if (v) document.getElementById(`${k}-choice`).value = v;
+        });
+      };
+    </script>
+  </head>
+  <body class="min-h-screen px-4 pt-4 pb-12">
+    <!-- Saudi 2030 Logo -->
+    <img
+      src="/assets/vision2030-logo.png"
+      alt="Saudi Vision 2030 Logo"
+      class="h-12 mb-4"
+    />
+
+    <div class="w-full max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold text-center mb-6">🧠 Choose Your Tutor</h1>
+      <p class="text-center text-slate-300 mb-8">
+        Select the personality style you'd like to guide you through this
+        session.
+      </p>
+
+      <form action="play.html" method="GET" class="space-y-6">
+        <input type="hidden" id="name-choice" name="name" />
+        <input type="hidden" id="age-choice" name="age" />
+        <input type="hidden" id="language-choice" name="language" />
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Saudi Businessman -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="saudi-businessman"
+              class="hidden"
+              required
+            />
+            <img
+              src="assets/avatars/saudi-businessman.png"
+              alt="SaudiBusinessman"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">SaudiBusinessman</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Confident & Professional — experienced mentor in traditional
+              attire.
+            </p>
+          </label>
+
+          <!-- Saudi Doctor -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="saudi-doctor"
+              class="hidden"
+            />
+            <img
+              src="assets/avatars/saudi-doctor.png"
+              alt="SaudiDoctor"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">SaudiDoctor</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Smart & Empathetic — science-driven and student-focused.
+            </p>
+          </label>
+
+          <!-- Saudi Warrior -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="saudi-warrior"
+              class="hidden"
+            />
+            <img
+              src="assets/avatars/saudi-warrior.png"
+              alt="SaudiWarrior"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">SaudiWarrior</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Disciplined & Tactical — historical strength with focused purpose.
+            </p>
+          </label>
+
+          <!-- Ada -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input type="radio" name="avatar" value="ada" class="hidden" />
+            <img src="assets/avatars/ada.png" alt="Ada" class="avatar-img" />
+            <h2 class="font-semibold mb-1 text-lg">Ada</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Empathetic & Inspiring — supportive guide that grows and learns
+              with you.
+            </p>
+          </label>
+
+          <!-- Code of Duty -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input
+              type="radio"
+              name="avatar"
+              value="code-of-duty"
+              class="hidden"
+            />
+            <img
+              src="assets/avatars/code-of-duty.png"
+              alt="Code of Duty"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Code of Duty</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Tactical & Focused — mission-driven style for gamers and
+              strategists.
+            </p>
+          </label>
+
+          <!-- Origami -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input type="radio" name="avatar" value="origami" class="hidden" />
+            <img
+              src="assets/avatars/origami.png"
+              alt="Origami"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Origami</h2>
+            <p class="text-sm text-slate-300 text-center">
+              Friendly & Curious — your creative thinking companion.
+            </p>
+          </label>
+        </div>
+
+        <div class="text-center pt-6">
+          <button
+            type="submit"
+            class="bg-green-700 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-green-800"
+          >
+            Continue →
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "appId": "com.adaskids.app",
+  "appName": "adaskids",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

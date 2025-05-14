@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ada’s Kids Demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+        background: linear-gradient(to bottom, #fffaf0, #ffe4e6);
+      }
+    </style>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="text-gray-800">
+    <!-- Navigation Bar -->
+    <header class="bg-white bg-opacity-80 shadow-md fixed top-0 w-full z-50">
+      <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+        >
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center space-x-2">
+            <img
+              src="assets/adas-kids-logo.png"
+              alt="Ada's Kids Logo"
+              class="h-8 w-8"
+            />
+            <span class="font-bold text-lg">Ada's Kids</span>
+          </a>
+
+          <!-- Desktop Links -->
+          <div id="nav-links" class="hidden md:flex space-x-6 items-center">
+            <a href="index.html#home" class="hover:text-yellow-500">Home</a>
+            <a href="index.html#vision" class="hover:text-yellow-500">Hear Our Vision</a>
+            <a href="index.html#testimonials" class="hover:text-yellow-500">Testimonials</a>
+            <a href="demo.html" class="hover:text-yellow-500">Saudi Demo</a>
+            <a href="index.html#consulting" class="hover:text-yellow-500">Consulting</a>
+            <a href="https://adas-kids-hux109y.gamma.site/web-app-walkthrough"   class="hover:text-yellow-500" target="_blank" rel="noopener noreferrer">App Walkthrough</a>
+            <a href="https://untitled-a005ocy.gamma.site/action-plan"   class="hover:text-yellow-500" target="_blank" rel="noopener noreferrer">Action Plan</a>
+            <a href="https://pd-outline-ir5jjbw.gamma.site/"    class="hover:text-yellow-500" target="_blank" rel="noopener noreferrer">PD Outline</a>
+            <a
+              href="login.html"
+              class="ml-4 bg-pink-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
+              >Talk to Ada</a
+            >
+          </div>
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-gray-700 focus:outline-none"
+          >
+            ☰
+          </button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-90 pt-16">
+          <a href="index.html#home" class="block py-2 px-4 border-b">Home</a>
+          <a href="index.html#vision" class="block py-2 px-4 border-b">Hear Our Vision</a>
+          <a href="index.html#testimonials" class="block py-2 px-4 border-b">Testimonials</a>
+          <a href="demo.html" class="block py-2 px-4 border-b">Saudi Demo</a>
+          <a href="index.html#consulting" class="block py-2 px-4 border-b">Consulting</a>
+
+          <!-- new items -->
+          <a href="https://adas-kids-hux109y.gamma.site/" class="block py-2 px-4 border-b">Walk Through</a>
+          <a href="https://untitled-a005ocy.gamma.site/" class="block py-2 px-4 border-b">Action Plan</a>
+          <a href="https://pd-outline-ir5jjbw.gamma.site/" class="block py-2 px-4 border-b">PD Outline</a>
+
+          <!-- CTA -->
+          <a href="login.html"
+            class="block mt-2 py-2 px-4 font-semibold bg-pink-500 text-white rounded-b-lg hover:bg-pink-600"
+          >
+            Talk to Ada
+          </a>
+        </div>
+    </header>
+
+    <!-- ✅ Main Content (use this to space content below navbar) -->
+    <main class="pt-24">
+      <!-- Slide 1 -->
+      <section
+        class="min-h-screen flex flex-col justify-center items-center px-6 text-center"
+      >
+        <div class="max-w-3xl">
+          <h1 class="text-4xl font-bold mb-6">✨ A New Way to Learn</h1>
+          <!-- 🔽 Insert image for Slide 1 below -->
+          <img
+            src="/assets/demo/slide1.png"
+            alt="Ada's Kids AI Tutor"
+            class="w-full max-w-md mx-auto rounded-lg shadow-lg mb-6"
+          />
+          <p class="text-lg leading-relaxed">
+            Imagine if instead of a plain black screen with text, students could
+            interact with a warm, friendly tutor who speaks to them like a real
+            person — guiding them, encouraging them, and answering their
+            questions instantly. That’s what we’re building with Ada’s Kids.
+            It’s powered by the same advanced intelligence behind ChatGPT, but
+            we’re giving it a voice, a face, and a personality to make learning
+            feel natural and engaging.
+            <br /><br />
+            Whether it's a young child learning math or a university student
+            exploring complex topics, Ada meets them where they are and supports
+            them like a personal mentor — available anytime, on any device.
+            We’re aiming to have a working student demo ready by June 1st, and
+            we’d love to show you what that looks like.
+          </p>
+
+          <ul class="list-disc list-inside text-gray-700 mb-10">
+            <li>
+              Warm, conversational AI replaces traditional text interfaces
+            </li>
+            <li>Powered by the same intelligence as ChatGPT</li>
+            <li>Designed with a voice, face, and personality for engagement</li>
+            <li>Supports learners across all ages and levels</li>
+            <li>Student-ready demo launching June 1st</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section
+        class="min-h-screen flex flex-col justify-center items-center px-6 text-center bg-pink-50"
+      >
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-bold mb-6">🧠 Making AI Personal</h2>
+          <!-- 🔽 Insert image for Slide 2 below -->
+          <img
+            src="/assets/demo/slide2.png"
+            alt="Students talking with Ada"
+            class="w-full max-w-md mx-auto rounded-lg shadow-lg mb-6"
+          />
+          <p class="text-lg leading-relaxed">
+            This is how we bring AI into the mainstream of learning — by simply
+            making it personal. No complicated software, no intimidating
+            dashboards. Just a kind, responsive companion that students
+            naturally begin to rely on.
+            <br /><br />
+            As they talk with Ada daily, they grow more comfortable using AI to
+            learn, to explore, and to ask questions they might never ask in
+            class. It becomes second nature — the idea that help, guidance, and
+            inspiration are just one conversation away.
+          </p>
+
+          <ul class="list-disc list-inside text-gray-700 mb-10">
+            <li>Simple, human-centered interface makes AI approachable</li>
+            <li>
+              No dashboards, menus, or friction — just natural conversation
+            </li>
+            <li>
+              Students build comfort and curiosity through daily interaction
+            </li>
+            <li>Encourages deeper questions and self-directed exploration</li>
+            <li>Fosters the habit of seeking help when it's needed</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section
+        class="min-h-screen flex flex-col justify-center items-center px-6 text-center"
+      >
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-bold mb-6">🌱 Growing With Each Learner</h2>
+          <!-- 🔽 Insert image for Slide 3 below -->
+          <img
+            src="/assets/demo/slide3.png"
+            alt="Ada guiding a child’s future"
+            class="w-full max-w-md mx-auto rounded-lg shadow-lg mb-6"
+          />
+          <p class="text-lg leading-relaxed">
+            Looking forward, our mission with Ada’s Kids is to do more than just
+            support students day to day — we want to guide them toward their
+            most fulfilling future. By observing how they interact with Ada,
+            what they ask, how they think, and what excites them, we can gently
+            help uncover their strengths and passions.
+            <br /><br />
+            Over time, Ada will be able to recommend personalized learning
+            paths, career ideas, and opportunities that align with who each
+            student truly is. It’s a vision of education that is personal,
+            lifelong, and guided not by standardized testing, but by real
+            curiosity and connection.
+          </p>
+
+          <ul class="list-disc list-inside text-gray-700 mb-10">
+            <li>Observes patterns in conversation to identify interests</li>
+            <li>Helps uncover each student's unique strengths</li>
+            <li>Recommends tailored learning and career opportunities</li>
+            <li>
+              Shifts from standardized testing to curiosity-based learning
+            </li>
+            <li>Builds a foundation for lifelong educational guidance</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 🌟 Key Benefits Highlight Section -->
+      <section class="py-16 bg-white bg-opacity-60 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1: Humanlike Learning Experience -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition"
+            >
+              <h3 class="text-xl font-bold text-pink-600 mb-3">
+                Personal AI Mentor
+              </h3>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>
+                  Warm, conversational AI replaces traditional text interfaces
+                </li>
+                <li>Powered by the same intelligence as ChatGPT</li>
+                <li>
+                  Designed with a voice, face, and personality for engagement
+                </li>
+                <li>Supports learners across all ages and levels</li>
+                <li>Student-ready demo launching June 1st</li>
+              </ul>
+            </div>
+
+            <!-- Card 2: Natural Everyday Use -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition"
+            >
+              <h3 class="text-xl font-bold text-pink-600 mb-3">
+                Comfortable Daily Use
+              </h3>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Simple, human-centered interface makes AI approachable</li>
+                <li>
+                  No dashboards, menus, or friction — just natural conversation
+                </li>
+                <li>
+                  Students build comfort and curiosity through daily interaction
+                </li>
+                <li>
+                  Encourages deeper questions and self-directed exploration
+                </li>
+                <li>Fosters the habit of seeking help when it's needed</li>
+              </ul>
+            </div>
+
+            <!-- Card 3: Personalized Educational Growth -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition"
+            >
+              <h3 class="text-xl font-bold text-pink-600 mb-3">
+                Guiding Future Paths
+              </h3>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Observes patterns in conversation to identify interests</li>
+                <li>Helps uncover each student's unique strengths</li>
+                <li>Recommends tailored learning and career opportunities</li>
+                <li>
+                  Shifts from standardized testing to curiosity-based learning
+                </li>
+                <li>Builds a foundation for lifelong educational guidance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ✅ Scripts at end of body -->
+    <script src="js/script.js"></script>
+    <script>
+      // Mobile menu toggle
+      window.addEventListener('load', () => {
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+          btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+      </script>
+      
+  </body>
+</html>

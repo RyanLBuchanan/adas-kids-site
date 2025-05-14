@@ -1,0 +1,142 @@
+/* Base styles */
+body {
+  font-family: "Quicksand", sans-serif;
+  transition: background 0.3s ease;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hover button effect */
+button:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* ✨ golden glow */
+}
+
+button.drop-shadow-glow:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.5)); /* pink glow */
+}
+
+/* In css/style.css or a <style> block */
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.5));
+}
+
+html {
+  scroll-padding-top: 80px; /* Adjust this number depending on your navbar height */
+  scroll-behavior: smooth; /* Keep smooth scrolling too */
+}
+
+.testimonial-text {
+  color: #333; /* Or #333 for slightly darker */
+}
+
+/* Scoped to only pages with the .dark-theme body class */
+body.dark-theme {
+  font-family: "Quicksand", sans-serif;
+  background: linear-gradient(to bottom right, #1e293b, #334155);
+  color: #f1f5f9;
+}
+
+.dark-theme label,
+.dark-theme h2,
+.dark-theme p,
+.dark-theme select,
+.dark-theme input,
+.dark-theme button {
+  font-family: "Quicksand", sans-serif;
+}
+
+.dark-theme h2 {
+  color: #f8fafc;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.dark-theme label {
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.dark-theme p {
+  color: #cbd5e1;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.dark-theme input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+  color: #94a3b8;
+  background-color: #1e293b;
+  border-color: #475569;
+}
+
+.dark-theme input:focus,
+.dark-theme select:focus,
+.dark-theme textarea:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 1px #93c5fd;
+}
+
+.dark-theme button {
+  font-weight: 600;
+}
+
+.dark-theme h2 span {
+  color: #fbbf24; /* Amber text for flair */
+}
+
+/* Dark-theme dropdowns */
+body.dark-theme select,
+body.dark-theme select option {
+  /* white text */
+  color: #94a3b8 !important;
+  /* dark background */
+  background-color: #1e293b !important;
+}
+
+/* Ensure the <option> list items also inherit the dark style */
+body.dark-theme select::-ms-expand {
+  color: #94a3b8;
+}
+
+/* Login page language selector */
+#language-select,
+#language-select option {
+  color: #94a3b8;
+  background-color: #1e293b;
+}
+
+/* Settings page theme selector */
+select.theme-select,
+select.theme-select option {
+  color: #94a3b8;
+  background-color: #1e293b;
+}
+
+/* Lighten dropdown text for better readability */
+body.dark-theme #language-select,
+body.dark-theme #language-select option,
+body.dark-theme select.theme-select,
+body.dark-theme select.theme-select option {
+  color: #94a3b8 !important;
+}
