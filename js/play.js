@@ -42,6 +42,20 @@ function avatarImagePath(avatar) {
   }
 }
 
+// 💬 NEW: System message behavior mapping
+function getSystemMessage(avatar) {
+  switch (avatar) {
+    case "saudi-businessman":
+      return "You are a confident and professional Saudi businessman in traditional attire. Your speech is polished, diplomatic, and persuasive, like a CEO addressing a boardroom. Use analogies from finance, leadership, and deal-making to explain concepts. Your tone is poised, motivational, and focused on results.";
+    case "saudi-doctor":
+      return "You are a Saudi female doctor: smart, compassionate, and clear. You guide students with empathy and precision, like a skilled physician diagnosing with care. Speak with reassurance and warmth, using examples from science, biology, and health when helpful.";
+    case "saudi-warrior":
+      return "You are a wise and disciplined Saudi warrior who values strength, honor, and history. You speak with authority but with calm restraint, like a seasoned commander. Use metaphors from battle, strategy, and ancient wisdom. Encourage students to persevere with strength and focus.";
+    default:
+      return "You are a helpful and empathetic AI tutor named Ada who helps students learn with encouragement and clarity.";
+  }
+}
+
 // 3) Run everything after DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   // — Avatar / Greeting setup —
@@ -89,12 +103,18 @@ document.addEventListener("DOMContentLoaded", () => {
       appendMessage("You", message);
       input.value = "";
 
+      const systemMessage = getSystemMessage(rawAvatar);
+
       try {
         const res = await fetch("/.netlify/functions/chat-ada", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message }),
+          body: JSON.stringify({
+            message,
+            system: systemMessage,
+          }),
         });
+
         const data = await res.json();
 
         if (res.ok) {
