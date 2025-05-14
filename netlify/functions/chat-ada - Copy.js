@@ -7,18 +7,11 @@ const openai = new OpenAI({
 
 exports.handler = async function (event, context) {
   try {
-    const { message, system } = JSON.parse(event.body);
-
-    const systemMessage =
-      system ||
-      "You are a helpful and empathetic AI tutor named Ada who helps students learn with encouragement and clarity.";
+    const { message } = JSON.parse(event.body);
 
     const chatCompletion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo", // You can switch to "gpt-4" later
-      messages: [
-        { role: "system", content: systemMessage },
-        { role: "user", content: message },
-      ],
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: message }],
     });
 
     const reply = chatCompletion.choices[0].message.content;
