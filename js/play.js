@@ -156,3 +156,8 @@ function appendMessage(sender, message) {
   chatLog.appendChild(div);
   chatLog.scrollTop = chatLog.scrollHeight;
 }
+const walkthroughBtn = document.getElementById("walkthrough-link");
+if (walkthroughBtn) {
+  const currentParams = new URLSearchParams(window.location.search);
+  walkthroughBtn.href = `problem.html?${currentParams.toString()}`;
+}
