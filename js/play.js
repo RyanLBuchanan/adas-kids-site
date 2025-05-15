@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // — Avatar / Greeting setup —
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name") || "Student";
-  const rawAvatar = params.get("avatar") || avatar;
+  const rawAvatar = params.get("avatar") || "origami";
   const avatarLabel = formatAvatarName(rawAvatar).split(" ")[0];
 
   // Update greeting text

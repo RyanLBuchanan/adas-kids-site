@@ -46,7 +46,7 @@ dependencies {
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
 
-    implementation 'com.getcapacitor:capacitor-android:5.0.6'
+    implementation 'com.getcapacitor:capacitor-android:5.0.4'
 
 //    implementation project(':capacitor-android')
     testImplementation "junit:junit:$junitVersion"
