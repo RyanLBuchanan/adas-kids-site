@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // — Avatar / Greeting setup —
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name") || "Student";
-  const rawAvatar = params.get("avatar") || "origami";
+  const rawAvatar = params.get("avatar") || avatar;
   const avatarLabel = formatAvatarName(rawAvatar).split(" ")[0];
 
   // Update greeting text
@@ -145,6 +145,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  const walkthroughBtn = document.getElementById("walkthrough-link");
+  if (walkthroughBtn) {
+    const currentParams = new URLSearchParams(window.location.search);
+    walkthroughBtn.href = `problem.html?${currentParams.toString()}`;
+  }
 });
 
 // 4) Message appender
@@ -155,9 +161,4 @@ function appendMessage(sender, message) {
   const chatLog = document.getElementById("chat-log");
   chatLog.appendChild(div);
   chatLog.scrollTop = chatLog.scrollHeight;
-}
-const walkthroughBtn = document.getElementById("walkthrough-link");
-if (walkthroughBtn) {
-  const currentParams = new URLSearchParams(window.location.search);
-  walkthroughBtn.href = `problem.html?${currentParams.toString()}`;
 }
