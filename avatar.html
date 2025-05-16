@@ -16,7 +16,7 @@
     <style>
       body {
         font-family: "Quicksand", sans-serif;
-        background: linear-gradient(to bottom right, #1d8348, #145a32);
+        background: linear-gradient(to bottom right, #1e293b, #334155);
         color: #f1f5f9;
       }
       label {
@@ -46,10 +46,10 @@
       };
     </script>
   </head>
-  <body class="min-h-screen px-4 pt-4 pb-12">
-    <div class="w-full max-w-4xl mx-auto">
+  <body class="min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-3xl">
       <h1 class="text-3xl font-bold text-center mb-6">🧠 Choose Your Tutor</h1>
-      <p class="text-center text-slate-300 mb-8">
+      <p class="text-center text-slate-400 mb-8">
         Select the personality style you'd like to guide you through this
         session.
       </p>
@@ -59,81 +59,80 @@
         <input type="hidden" id="language-choice" name="language" />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Saudi Businessman -->
+          <!-- Carvis -->
           <label
             class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
           >
             <input
               type="radio"
               name="avatar"
-              value="saudi-businessman"
+              value="carvis"
               class="hidden"
               required
             />
             <img
-              src="assets/avatars/saudi-businessman.png"
-              alt="SaudiBusinessman"
+              src="assets/avatars/carvis.png"
+              alt="Carvis"
               class="avatar-img"
             />
-            <h2 class="font-semibold mb-1 text-lg">SaudiBusinessman</h2>
-            <p class="text-sm text-slate-300 text-center">
-              Confident & Professional — experienced mentor in traditional
-              attire.
+            <h2 class="font-semibold mb-1 text-lg">Carvis</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Certainly Another Really Very Intelligent System — concise &
+              logical.
             </p>
           </label>
 
-          <!-- Saudi Doctor -->
+          <!-- Origami -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input type="radio" name="avatar" value="origami" class="hidden" />
+            <img
+              src="assets/avatars/origami.png"
+              alt="Origami"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Origami</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Helpful & Friendly — warm, knowledgeable, and focused on your
+              success.
+            </p>
+          </label>
+
+          <!-- Calfred -->
+          <label
+            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
+          >
+            <input type="radio" name="avatar" value="calfred" class="hidden" />
+            <img
+              src="assets/avatars/calfred.png"
+              alt="Calfred"
+              class="avatar-img"
+            />
+            <h2 class="font-semibold mb-1 text-lg">Calfred</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Wise & Supportive — gentle guidance with calm confidence.
+            </p>
+          </label>
+
+          <!-- Starship Computer -->
           <label
             class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
           >
             <input
               type="radio"
               name="avatar"
-              value="saudi-doctor"
+              value="starship-computer"
               class="hidden"
             />
             <img
-              src="assets/avatars/saudi-doctor.png"
-              alt="SaudiDoctor"
+              src="assets/avatars/starship.png"
+              alt="Starship Computer"
               class="avatar-img"
             />
-            <h2 class="font-semibold mb-1 text-lg">SaudiDoctor</h2>
-            <p class="text-sm text-slate-300 text-center">
-              Smart & Empathetic — science-driven and student-focused.
-            </p>
-          </label>
-
-          <!-- Saudi Warrior -->
-          <label
-            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
-          >
-            <input
-              type="radio"
-              name="avatar"
-              value="saudi-warrior"
-              class="hidden"
-            />
-            <img
-              src="assets/avatars/saudi-warrior.png"
-              alt="SaudiWarrior"
-              class="avatar-img"
-            />
-            <h2 class="font-semibold mb-1 text-lg">SaudiWarrior</h2>
-            <p class="text-sm text-slate-300 text-center">
-              Disciplined & Tactical — historical strength with focused purpose.
-            </p>
-          </label>
-
-          <!-- Ada -->
-          <label
-            class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
-          >
-            <input type="radio" name="avatar" value="ada" class="hidden" />
-            <img src="assets/avatars/ada.png" alt="Ada" class="avatar-img" />
-            <h2 class="font-semibold mb-1 text-lg">Ada</h2>
-            <p class="text-sm text-slate-300 text-center">
-              Empathetic & Inspiring — supportive guide that grows and learns
-              with you.
+            <h2 class="font-semibold mb-1 text-lg">Starship Computer</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Precise & Formal — neutral, accurate, and mission-focused.
             </p>
           </label>
 
@@ -153,52 +152,35 @@
               class="avatar-img"
             />
             <h2 class="font-semibold mb-1 text-lg">Code of Duty</h2>
-            <p class="text-sm text-slate-300 text-center">
+            <p class="text-sm text-slate-400 text-center">
               Tactical & Focused — mission-driven style for gamers and
               strategists.
             </p>
           </label>
 
-          <!-- Origami -->
+          <!-- Ada -->
           <label
             class="cursor-pointer p-6 rounded-xl shadow-lg flex flex-col items-center border border-transparent transition"
           >
-            <input type="radio" name="avatar" value="origami" class="hidden" />
-            <img
-              src="assets/avatars/origami.png"
-              alt="Origami"
-              class="avatar-img"
-            />
-            <h2 class="font-semibold mb-1 text-lg">Origami</h2>
-            <p class="text-sm text-slate-300 text-center">
-              Friendly & Curious — your creative thinking companion.
+            <input type="radio" name="avatar" value="ada" class="hidden" />
+            <img src="assets/avatars/ada.png" alt="Ada" class="avatar-img" />
+            <h2 class="font-semibold mb-1 text-lg">Ada</h2>
+            <p class="text-sm text-slate-400 text-center">
+              Empathetic & Inspiring — supportive guide that grows and learns
+              with you.
             </p>
           </label>
         </div>
 
-        <div class="text-center pt-6">
+        <div class="text-center pt-4">
           <button
             type="submit"
-            class="bg-green-700 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-green-800"
+            class="bg-pink-500 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-pink-600"
           >
             Continue →
           </button>
         </div>
       </form>
     </div>
-    <footer class="w-full bg-gray-900 text-white py-4 px-6 mt-10">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="flex items-center space-x-2 mb-2 md:mb-0">
-          <img
-            src="/assets/vision2030.png"
-            alt="Saudi Vision 2030"
-            class="h-8 md:h-10"
-          />
-        </div>
-        <div class="text-sm text-gray-400">
-          © 2025 Ada’s Kids. All rights reserved.
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

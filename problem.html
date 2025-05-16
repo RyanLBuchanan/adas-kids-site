@@ -46,12 +46,6 @@
     <header
       class="text-center py-6 shadow bg-white bg-opacity-10 backdrop-blur"
     >
-      <!-- Saudi Vision 2030 Logo Placeholder -->
-      <img
-        src="/assets/vision2030-logo.png"
-        alt="Saudi Vision 2030 Logo"
-        class="absolute top-4 left-4 h-12"
-      />
       <h1 class="text-3xl font-bold text-white">Problem Walkthrough</h1>
       <p class="text-sm text-slate-300">
         Step-by-step guided solution &amp; diagrams
@@ -69,9 +63,8 @@
 
       <div class="mt-6 text-center">
         <a
-          id="back-to-chat"
+          href="play.html"
           class="inline-block bg-pink-500 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-pink-600"
-          href="#"
         >
           ← Back to Chat
         </a>
@@ -81,35 +74,8 @@
     <footer class="text-center py-4 text-sm text-slate-400">
       <a href="/" class="underline hover:text-white">← Home</a>
     </footer>
-    <footer class="w-full bg-gray-900 text-white py-4 px-6 mt-10">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="flex items-center space-x-2 mb-2 md:mb-0">
-          <img
-            src="/assets/vision2030.png"
-            alt="Saudi Vision 2030"
-            class="h-8 md:h-10"
-          />
-        </div>
-        <div class="text-sm text-gray-400">
-          © 2025 Ada’s Kids. All rights reserved.
-        </div>
-      </div>
-    </footer>
 
     <!-- Walkthrough logic -->
     <script src="js/walkthrough.js"></script>
-    <script>
-      // Preserve avatar and name from query string
-      const params = new URLSearchParams(window.location.search);
-      const avatar = params.get("avatar");
-      const name = params.get("name");
-
-      const backLink = document.getElementById("back-to-chat");
-      if (backLink && avatar && name) {
-        backLink.href = `play.html?avatar=${avatar}&name=${encodeURIComponent(
-          name
-        )}`;
-      }
-    </script>
   </body>
 </html>
