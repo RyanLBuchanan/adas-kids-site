@@ -21,21 +21,22 @@
     <style>
       body {
         font-family: "Quicksand", sans-serif;
-        background: linear-gradient(
-          to bottom right,
-          #1d8348,
-          #145a32
-        ); /* Muted Saudi green */
+        background: linear-gradient(to bottom right, #1e293b, #334155);
         color: #f1f5f9;
       }
+      /* reuse your form styles if needed */
       input,
       select {
         color: #94a3b8;
-        background-color: #0f5132;
+        background-color: #1e293b;
       }
       select option {
         color: #94a3b8;
-        background-color: #0f5132;
+        background-color: #1e293b;
+      }
+      /* custom callout box */
+      .callout {
+        @apply bg-blue-800 border-l-4 border-blue-500 p-4 rounded-lg my-4;
       }
     </style>
   </head>
